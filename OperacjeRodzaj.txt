@@ -1,0 +1,15 @@
+Lp;rodzaj;rodzaj_ang
+1;Przelew z rachunku;transfer from account
+2;Przelew na rachunek;transfer into account
+3;Sp³ata kredytu;credit repayment
+4;Zlecenie sa³e;standing order
+5;Op³ata za prowadzenie rachunku;account maintenance charge
+6;Odseki;credit interest
+7;Odsetki karne;penal interest
+8;P³atnoœæ kart¹;card payment
+9;Wp³ata gotówkowa;cash payment
+10;Wyp³ata gotówkowa;cash advance
+11;Transakcja czekowa;transaction by cheque
+12;Prowizja;bank commission
+13;Wyp³ata z bankomatu;withdrawal from cash machin
+14;Wp³ata w bankomacie;deposit via cash machine

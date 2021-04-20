@@ -1,0 +1,3 @@
+typ;typ_ang
+obci¹¿enie;withdrawal
+uznanie;credit
