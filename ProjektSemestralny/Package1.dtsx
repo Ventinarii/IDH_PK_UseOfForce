@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{520BD7A6-ABAA-404F-8831-BA45649397B3}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{821215D1-420E-4F18-AFAA-CA7CEEFCB2C6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -39,6 +39,22 @@
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Action"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{1B7B77A1-C6FF-4BCA-B175-16A0213A7CA2}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Action"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Add all constraints"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
@@ -95,6 +111,7 @@
       DTS:refId="Package\Load all data in one GO"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{C2AB0C12-C06D-4E61-A9FA-6ADD5C120A98}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -16949,6 +16966,1316 @@
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{22F5A0F0-AFDC-4578-B097-8BFDF646DEED}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sequence Container">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Date"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{39012E28-533E-494F-A5A2-8D42FD65B800}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Date"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\Date\Conditional Split"
+                  componentClassID="Microsoft.ConditionalSplit"
+                  contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+                  name="Conditional Split"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Date\Conditional Split.Inputs[Conditional Split Input]"
+                      description="Input to the Conditional Split Transformation"
+                      name="Conditional Split Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Date\Conditional Split.Inputs[Conditional Split Input].Columns[CarryingCED]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="CarryingCED"
+                          lineageId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].Columns[CarryingCED]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Date\Conditional Split.Outputs[Case 1]"
+                      description="Output 1 of the Conditional Split Transformation"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Case 1"
+                      synchronousInputId="Package\Sequence Container\Date\Conditional Split.Inputs[Conditional Split Input]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                          name="Expression">#{Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].Columns[CarryingCED]} == "Yes"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the friendly version of the expression. This expression version uses column names."
+                          expressionType="Notify"
+                          name="FriendlyExpression">CarryingCED == "Yes"</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                          name="EvaluationOrder">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Date\Conditional Split.Outputs[Conditional Split Default Output]"
+                      description="Default Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      name="Conditional Split Default Output"
+                      synchronousInputId="Package\Sequence Container\Date\Conditional Split.Inputs[Conditional Split Input]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Date\Conditional Split.Outputs[Conditional Split Error Output]"
+                      description="Error Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Conditional Split Error Output"
+                      synchronousInputId="Package\Sequence Container\Date\Conditional Split.Inputs[Conditional Split Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Date\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Date\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Date\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Date\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Date\Date"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Date"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Date]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1250</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Date\Date.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[db-mssql.s17149]"
+                      connectionManagerRefId="Package.ConnectionManagers[db-mssql.s17149]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Date\Date.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Date\Date.Inputs[OLE DB Destination Input].Columns[Day]"
+                          cachedDataType="i4"
+                          cachedName="Day"
+                          externalMetadataColumnId="Package\Sequence Container\Date\Date.Inputs[OLE DB Destination Input].ExternalColumns[Day]"
+                          lineageId="Package\Sequence Container\Date\Derived Column.Outputs[Derived Column Output].Columns[Day]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Date\Date.Inputs[OLE DB Destination Input].Columns[Month]"
+                          cachedDataType="i4"
+                          cachedName="Month"
+                          externalMetadataColumnId="Package\Sequence Container\Date\Date.Inputs[OLE DB Destination Input].ExternalColumns[Month]"
+                          lineageId="Package\Sequence Container\Date\Derived Column.Outputs[Derived Column Output].Columns[Month]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Date\Date.Inputs[OLE DB Destination Input].Columns[Year]"
+                          cachedDataType="i4"
+                          cachedName="Year"
+                          externalMetadataColumnId="Package\Sequence Container\Date\Date.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
+                          lineageId="Package\Sequence Container\Date\Derived Column.Outputs[Derived Column Output].Columns[Year]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Date\Date.Inputs[OLE DB Destination Input].Columns[Season]"
+                          cachedDataType="wstr"
+                          cachedLength="7"
+                          cachedName="Season"
+                          externalMetadataColumnId="Package\Sequence Container\Date\Date.Inputs[OLE DB Destination Input].ExternalColumns[Season]"
+                          lineageId="Package\Sequence Container\Date\Derived Column.Outputs[Derived Column Output].Columns[Season]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Date.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                          dataType="i4"
+                          name="Id" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Date.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
+                          dataType="i4"
+                          name="Year" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Date.Inputs[OLE DB Destination Input].ExternalColumns[Month]"
+                          dataType="i4"
+                          name="Month" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Date.Inputs[OLE DB Destination Input].ExternalColumns[Day]"
+                          dataType="i4"
+                          name="Day" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Date.Inputs[OLE DB Destination Input].ExternalColumns[Season]"
+                          dataType="wstr"
+                          length="32"
+                          name="Season" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Date\Date.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Date\Date.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Date\Date.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Date\Date.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Date\Date.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Date\Date.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Date\Derived Column"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Date\Derived Column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Date\Derived Column.Inputs[Derived Column Input].Columns[IncidentDate]"
+                          cachedDataType="date"
+                          cachedName="IncidentDate"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Sequence Container\Date\Sort.Outputs[Sort Output].Columns[IncidentDate]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Date\Derived Column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Sequence Container\Date\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Date\Derived Column.Outputs[Derived Column Output].Columns[Day]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Sequence Container\Date\Derived Column.Outputs[Derived Column Output].Columns[Day]"
+                          name="Day"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[DAY](#{Package\Sequence Container\Date\Sort.Outputs[Sort Output].Columns[IncidentDate]})</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">DAY(IncidentDate)</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Date\Derived Column.Outputs[Derived Column Output].Columns[Month]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Sequence Container\Date\Derived Column.Outputs[Derived Column Output].Columns[Month]"
+                          name="Month"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[MONTH](#{Package\Sequence Container\Date\Sort.Outputs[Sort Output].Columns[IncidentDate]})</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">MONTH(IncidentDate)</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Date\Derived Column.Outputs[Derived Column Output].Columns[Year]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Sequence Container\Date\Derived Column.Outputs[Derived Column Output].Columns[Year]"
+                          name="Year"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[YEAR](#{Package\Sequence Container\Date\Sort.Outputs[Sort Output].Columns[IncidentDate]})</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">YEAR(IncidentDate)</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Date\Derived Column.Outputs[Derived Column Output].Columns[Season]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="7"
+                          lineageId="Package\Sequence Container\Date\Derived Column.Outputs[Derived Column Output].Columns[Season]"
+                          name="Season"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(6 &lt; [MONTH](#{Package\Sequence Container\Date\Sort.Outputs[Sort Output].Columns[IncidentDate]})) ? (3 &lt; [MONTH](#{Package\Sequence Container\Date\Sort.Outputs[Sort Output].Columns[IncidentDate]}) ? ("winter ") : ("spring")) : (9 &lt; [MONTH](#{Package\Sequence Container\Date\Sort.Outputs[Sort Output].Columns[IncidentDate]}) ? ("summer") : ("autumn"))</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(6 &lt; MONTH(IncidentDate)) ? (3 &lt; MONTH(IncidentDate) ? ("winter ") : ("spring")) : (9 &lt; MONTH(IncidentDate) ? ("summer") : ("autumn"))</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Date\Derived Column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Sequence Container\Date\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Date\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Date\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Date\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Date\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Date\Excel Source 1"
+                  componentClassID="Microsoft.ExcelSource"
+                  contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Excel Source 1"
+                  name="Excel Source 1"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">'UoF Data$'</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mapping from parameters in the SQL command to variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Date\Excel Source 1.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output]"
+                      name="Excel Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].Columns[IncidentDate]"
+                          dataType="date"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[IncidentDate]"
+                          lineageId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].Columns[IncidentDate]"
+                          name="IncidentDate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].Columns[CarryingCED]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CarryingCED]"
+                          length="255"
+                          lineageId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].Columns[CarryingCED]"
+                          name="CarryingCED"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[IncidentDate]"
+                          dataType="date"
+                          name="IncidentDate" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[IncidentTime]"
+                          dataType="date"
+                          name="IncidentTime" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Incident Location: Street/Highway]"
+                          dataType="wstr"
+                          length="255"
+                          name="Incident Location: Street/Highway" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Incident Location: Public Transport]"
+                          dataType="wstr"
+                          length="255"
+                          name="Incident Location: Public Transport" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Incident Location: Retail Premises]"
+                          dataType="wstr"
+                          length="255"
+                          name="Incident Location: Retail Premises" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Incident Location: Open ground (e#g# park, car park, field)]"
+                          dataType="wstr"
+                          length="255"
+                          name="Incident Location: Open ground (e#g# park, car park, field)" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Incident Location: Licensed Premises]"
+                          dataType="wstr"
+                          length="255"
+                          name="Incident Location: Licensed Premises" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Incident Location: Sports or Event Stadia]"
+                          dataType="wstr"
+                          length="255"
+                          name="Incident Location: Sports or Event Stadia" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Incident Location: Hospital/A&amp;E (non-mental-health setting)]"
+                          dataType="wstr"
+                          length="255"
+                          name="Incident Location: Hospital/A&amp;E (non-mental-health setting)" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Incident Location: Mental Health Setting]"
+                          dataType="wstr"
+                          length="255"
+                          name="Incident Location: Mental Health Setting" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Incident Location: Police vehicle with prisoner handling cage]"
+                          dataType="wstr"
+                          length="255"
+                          name="Incident Location: Police vehicle with prisoner handling cage" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Incident Location: Police vehicle without prisoner handling cage]"
+                          dataType="wstr"
+                          length="255"
+                          name="Incident Location: Police vehicle without prisoner handling cage" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Incident Location: Dwelling]"
+                          dataType="wstr"
+                          length="255"
+                          name="Incident Location: Dwelling" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Incident Location: Police station (excluding custody block)]"
+                          dataType="wstr"
+                          length="255"
+                          name="Incident Location: Police station (excluding custody block)" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Incident Location: Custody Block]"
+                          dataType="wstr"
+                          length="255"
+                          name="Incident Location: Custody Block" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Incident Location: Ambulance]"
+                          dataType="wstr"
+                          length="255"
+                          name="Incident Location: Ambulance" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Incident Location: Other]"
+                          dataType="wstr"
+                          length="255"
+                          name="Incident Location: Other" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Borough]"
+                          dataType="wstr"
+                          length="255"
+                          name="Borough" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[PrimaryConduct]"
+                          dataType="wstr"
+                          length="255"
+                          name="PrimaryConduct" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[AssaultedBySubject]"
+                          dataType="wstr"
+                          length="255"
+                          name="AssaultedBySubject" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[ThreatenedWithWeapon]"
+                          dataType="wstr"
+                          length="255"
+                          name="ThreatenedWithWeapon" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[AssaultedWithWeapon]"
+                          dataType="wstr"
+                          length="255"
+                          name="AssaultedWithWeapon" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Impact Factor: Possesion of a weapon]"
+                          dataType="wstr"
+                          length="255"
+                          name="Impact Factor: Possesion of a weapon" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Impact Factor: Alcohol]"
+                          dataType="wstr"
+                          length="255"
+                          name="Impact Factor: Alcohol" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Impact Factor: Drugs]"
+                          dataType="wstr"
+                          length="255"
+                          name="Impact Factor: Drugs" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Impact Factor: Mental Health]"
+                          dataType="wstr"
+                          length="255"
+                          name="Impact Factor: Mental Health" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Impact Factor: Prior Knowledge]"
+                          dataType="wstr"
+                          length="255"
+                          name="Impact Factor: Prior Knowledge" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Impact Factor: Size/Gender/Build]"
+                          dataType="wstr"
+                          length="255"
+                          name="Impact Factor: Size/Gender/Build" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Impact Factor: Acute Behavioural Disorder]"
+                          dataType="wstr"
+                          length="255"
+                          name="Impact Factor: Acute Behavioural Disorder" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Impact Factor: Crowd]"
+                          dataType="wstr"
+                          length="255"
+                          name="Impact Factor: Crowd" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Impact Factor: Other]"
+                          dataType="wstr"
+                          length="255"
+                          name="Impact Factor: Other" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Reason for Force: Protect self]"
+                          dataType="wstr"
+                          length="255"
+                          name="Reason for Force: Protect self" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Reason for Force: Protect Public]"
+                          dataType="wstr"
+                          length="255"
+                          name="Reason for Force: Protect Public" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Reason for Force: Protect Subject]"
+                          dataType="wstr"
+                          length="255"
+                          name="Reason for Force: Protect Subject" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Reason for Force: Protect Other Officers]"
+                          dataType="wstr"
+                          length="255"
+                          name="Reason for Force: Protect Other Officers" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Reason for Force: Prevent Offence]"
+                          dataType="wstr"
+                          length="255"
+                          name="Reason for Force: Prevent Offence" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Reason for Force: Secure Evidence]"
+                          dataType="wstr"
+                          length="255"
+                          name="Reason for Force: Secure Evidence" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Reason for Force: Effect Search]"
+                          dataType="wstr"
+                          length="255"
+                          name="Reason for Force: Effect Search" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Reason for Force: Effect Arrest]"
+                          dataType="wstr"
+                          length="255"
+                          name="Reason for Force: Effect Arrest" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Reason for Force: Method of Entry]"
+                          dataType="wstr"
+                          length="255"
+                          name="Reason for Force: Method of Entry" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Reason for Force: Remove Handcuffs]"
+                          dataType="wstr"
+                          length="255"
+                          name="Reason for Force: Remove Handcuffs" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Reason for Force: Prevent Harm]"
+                          dataType="wstr"
+                          length="255"
+                          name="Reason for Force: Prevent Harm" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Reason for Force: Prevent Escape]"
+                          dataType="wstr"
+                          length="255"
+                          name="Reason for Force: Prevent Escape" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Reason for Force: Other]"
+                          dataType="wstr"
+                          length="255"
+                          name="Reason for Force: Other" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[MainDuty]"
+                          dataType="wstr"
+                          length="255"
+                          name="MainDuty" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[SingleCrewed]"
+                          dataType="wstr"
+                          length="255"
+                          name="SingleCrewed" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[TrainedCED]"
+                          dataType="wstr"
+                          length="255"
+                          name="TrainedCED" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CarryingCED]"
+                          dataType="wstr"
+                          length="255"
+                          name="CarryingCED" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Tactic 1]"
+                          dataType="wstr"
+                          length="255"
+                          name="Tactic 1" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Effective 1]"
+                          dataType="wstr"
+                          length="255"
+                          name="Effective 1" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Tactic 2]"
+                          dataType="wstr"
+                          length="255"
+                          name="Tactic 2" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Effective 2]"
+                          dataType="wstr"
+                          length="255"
+                          name="Effective 2" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Tactic 3]"
+                          dataType="wstr"
+                          length="255"
+                          name="Tactic 3" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Effective 3]"
+                          dataType="wstr"
+                          length="255"
+                          name="Effective 3" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Tactic 4]"
+                          dataType="wstr"
+                          length="255"
+                          name="Tactic 4" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Effective 4]"
+                          dataType="wstr"
+                          length="255"
+                          name="Effective 4" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Tactic 5]"
+                          dataType="wstr"
+                          length="255"
+                          name="Tactic 5" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Effective 5]"
+                          dataType="wstr"
+                          length="255"
+                          name="Effective 5" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED Drawn]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED Drawn" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED Aimed]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED Aimed" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED Arced]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED Arced" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED Red-Dotted]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED Red-Dotted" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED Drive Stun]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED Drive Stun" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED Drive Stun Repeat Application]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED Drive Stun Repeat Application" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED Angle Drive Stun]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED Angle Drive Stun" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED Fired]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED Fired" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED Fired Cartridge Number]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED Fired Cartridge Number" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED Fired 5 Secs Cycle Interrupted]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED Fired 5 Secs Cycle Interrupted" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED Fired Repeat Cycle Same Cartridge]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED Fired Repeat Cycle Same Cartridge" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED Fired Total Number Of Cycles]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED Fired Total Number Of Cycles" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED Fired Cycle Extended Beyond 5 Secs]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED Fired Cycle Extended Beyond 5 Secs" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED Fired Miss With One Probe]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED Fired Miss With One Probe" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED Fired Miss With Both Probes]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED Fired Miss With Both Probes" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED2 Drawn]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED2 Drawn" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED2 Aimed]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED2 Aimed" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED2 ArCED2]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED2 ArCED2" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED2 Red-Dotted]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED2 Red-Dotted" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED2 Drive Stun]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED2 Drive Stun" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED2 Drive Stun Repeat Application]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED2 Drive Stun Repeat Application" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED2 Angle Drive Stun]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED2 Angle Drive Stun" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED2 Fired]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED2 Fired" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED2 Fired Cartridge Number]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED2 Fired Cartridge Number" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED2 Fired 5 Secs Cycle Interrupted]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED2 Fired 5 Secs Cycle Interrupted" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED2 Fired Repeat Cycle Same Cartridge]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED2 Fired Repeat Cycle Same Cartridge" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED2 Fired Total Number Of Cycles]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED2 Fired Total Number Of Cycles" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED2 Fired Cycle Extended Beyond 5 Secs]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED2 Fired Cycle Extended Beyond 5 Secs" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED2 Fired Miss With One Probe]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED2 Fired Miss With One Probe" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED2 Fired Miss With Both Probes]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED2 Fired Miss With Both Probes" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED3 Drawn]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED3 Drawn" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED3 Aimed]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED3 Aimed" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED3 ArCED3]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED3 ArCED3" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED3 Red-Dotted]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED3 Red-Dotted" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED3 Drive Stun]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED3 Drive Stun" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED3 Drive Stun Repeat Application]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED3 Drive Stun Repeat Application" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED3 Angle Drive Stun]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED3 Angle Drive Stun" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED3 Fired]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED3 Fired" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED3 Fired Cartridge Number]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED3 Fired Cartridge Number" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED3 Fired 5 Secs Cycle Interrupted]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED3 Fired 5 Secs Cycle Interrupted" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED3 Fired Repeat Cycle Same Cartridge]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED3 Fired Repeat Cycle Same Cartridge" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED3 Fired Total Number Of Cycles]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED3 Fired Total Number Of Cycles" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED3 Fired Cycle Extended Beyond 5 Secs]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED3 Fired Cycle Extended Beyond 5 Secs" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED3 Fired Miss With One Probe]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED3 Fired Miss With One Probe" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED3 Fired Miss With Both Probes]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED3 Fired Miss With Both Probes" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED4 Drawn]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED4 Drawn" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED4 Aimed]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED4 Aimed" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED4 ArCED4]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED4 ArCED4" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED4 Red-Dotted]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED4 Red-Dotted" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED4 Drive Stun]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED4 Drive Stun" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED4 Drive Stun Repeat Application]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED4 Drive Stun Repeat Application" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED4 Angle Drive Stun]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED4 Angle Drive Stun" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED4 Fired]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED4 Fired" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED4 Fired Cartridge Number]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED4 Fired Cartridge Number" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED4 Fired 5 Secs Cycle Interrupted]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED4 Fired 5 Secs Cycle Interrupted" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED4 Fired Repeat Cycle Same Cartridge]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED4 Fired Repeat Cycle Same Cartridge" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED4 Fired Total Number Of Cycles]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED4 Fired Total Number Of Cycles" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED4 Fired Cycle Extended Beyond 5 Secs]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED4 Fired Cycle Extended Beyond 5 Secs" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED4 Fired Miss With One Probe]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED4 Fired Miss With One Probe" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[CED4 Fired Miss With Both Probes]"
+                          dataType="wstr"
+                          length="255"
+                          name="CED4 Fired Miss With Both Probes" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Firearms Aimed]"
+                          dataType="wstr"
+                          length="255"
+                          name="Firearms Aimed" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Firearms Fired]"
+                          dataType="wstr"
+                          length="255"
+                          name="Firearms Fired" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[SubjectAge]"
+                          dataType="wstr"
+                          length="255"
+                          name="SubjectAge" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[SubjectGender]"
+                          dataType="wstr"
+                          length="255"
+                          name="SubjectGender" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[SubjectEthnicity]"
+                          dataType="wstr"
+                          length="255"
+                          name="SubjectEthnicity" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[PhysicalDisability]"
+                          dataType="wstr"
+                          length="255"
+                          name="PhysicalDisability" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[MentalDisability]"
+                          dataType="wstr"
+                          length="255"
+                          name="MentalDisability" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[StaffInjured]"
+                          dataType="wstr"
+                          length="255"
+                          name="StaffInjured" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[StaffInjuryIntentional]"
+                          dataType="wstr"
+                          length="255"
+                          name="StaffInjuryIntentional" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[StaffInjuryLevel]"
+                          dataType="wstr"
+                          length="255"
+                          name="StaffInjuryLevel" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[StaffMedProvided]"
+                          dataType="wstr"
+                          length="255"
+                          name="StaffMedProvided" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[SubjectInjured]"
+                          dataType="wstr"
+                          length="255"
+                          name="SubjectInjured" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[SubjectNatureOfInjury]"
+                          dataType="wstr"
+                          length="255"
+                          name="SubjectNatureOfInjury" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[SubjectMedOffered]"
+                          dataType="wstr"
+                          length="255"
+                          name="SubjectMedOffered" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[SubjectMedProvided]"
+                          dataType="wstr"
+                          length="255"
+                          name="SubjectMedProvided" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Outcome: Made off/escaped]"
+                          dataType="wstr"
+                          length="255"
+                          name="Outcome: Made off/escaped" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Outcome: Arrested]"
+                          dataType="wstr"
+                          length="255"
+                          name="Outcome: Arrested" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Outcome: Hospitalised]"
+                          dataType="wstr"
+                          length="255"
+                          name="Outcome: Hospitalised" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Outcome: Detained - Mental Health Act]"
+                          dataType="wstr"
+                          length="255"
+                          name="Outcome: Detained - Mental Health Act" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Outcome: Fatality]"
+                          dataType="wstr"
+                          length="255"
+                          name="Outcome: Fatality" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Outcome: Other]"
+                          dataType="wstr"
+                          length="255"
+                          name="Outcome: Other" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Error Output]"
+                      isErrorOut="true"
+                      name="Excel Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Error Output].Columns[IncidentDate]"
+                          dataType="date"
+                          lineageId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Error Output].Columns[IncidentDate]"
+                          name="IncidentDate" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Error Output].Columns[CarryingCED]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Error Output].Columns[CarryingCED]"
+                          name="CarryingCED" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Date\Sort"
+                  componentClassID="Microsoft.Sort"
+                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+                  name="Sort"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                      name="EliminateDuplicates">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the maximum number of threads to use for sorting."
+                      expressionType="Notify"
+                      name="MaximumThreads">-1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Date\Sort.Inputs[Sort Input]"
+                      name="Sort Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Date\Sort.Inputs[Sort Input].Columns[IncidentDate]"
+                          cachedDataType="date"
+                          cachedName="IncidentDate"
+                          lineageId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].Columns[IncidentDate]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">1</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Date\Sort.Outputs[Sort Output]"
+                      isSorted="true"
+                      name="Sort Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Date\Sort.Outputs[Sort Output].Columns[IncidentDate]"
+                          dataType="date"
+                          lineageId="Package\Sequence Container\Date\Sort.Outputs[Sort Output].Columns[IncidentDate]"
+                          name="IncidentDate"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output].Columns[IncidentDate]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\Date.Paths[Case 1]"
+                  endId="Package\Sequence Container\Date\Sort.Inputs[Sort Input]"
+                  name="Case 1"
+                  startId="Package\Sequence Container\Date\Conditional Split.Outputs[Case 1]" />
+                <path
+                  refId="Package\Sequence Container\Date.Paths[Derived Column Output]"
+                  endId="Package\Sequence Container\Date\Date.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\Sequence Container\Date\Derived Column.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Sequence Container\Date.Paths[Excel Source Output]"
+                  endId="Package\Sequence Container\Date\Conditional Split.Inputs[Conditional Split Input]"
+                  name="Excel Source Output"
+                  startId="Package\Sequence Container\Date\Excel Source 1.Outputs[Excel Source Output]" />
+                <path
+                  refId="Package\Sequence Container\Date.Paths[Sort Output]"
+                  endId="Package\Sequence Container\Date\Derived Column.Inputs[Derived Column Input]"
+                  name="Sort Output"
+                  startId="Package\Sequence Container\Date\Sort.Outputs[Sort Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -16962,19 +18289,27 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{8B39E091-F4FE-41B2-8B29-1204254AD8C5}"
+      DTS:DTSID="{A6472127-8D79-43E9-916F-9FBA4EFCBF1D}"
       DTS:From="Package\Create all tables"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\Load all data in one GO" />
+      DTS:To="Package\Add all constraints" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{E950B88B-BF63-4D53-9878-A4C58525E2E2}"
-      DTS:From="Package\Load all data in one GO"
+      DTS:DTSID="{0C133317-7F1E-4E31-8A8D-6B12E62441B0}"
+      DTS:From="Package\Add all constraints"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
-      DTS:To="Package\Add all constraints" />
+      DTS:To="Package\Sequence Container" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{72B2EF5D-E779-47AD-9A46-1B86082BFCB3}"
+      DTS:From="Package\Sequence Container"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Action" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -16987,7 +18322,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="155,42"
           Id="Package\Create all tables"
@@ -16995,55 +18330,11 @@
         <NodeLayout
           Size="165,42"
           Id="Package\Add all constraints"
-          TopLeft="332,572" />
+          TopLeft="344,416" />
         <NodeLayout
           Size="190,42"
           Id="Package\Load all data in one GO"
-          TopLeft="326,426" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="421.75,349">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,77"
-              Start="0,0"
-              End="0,69.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,69.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="417.75,468">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,104"
-              Start="0,0"
-              End="0,96.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,96.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="655,195" />
         <NodeLayout
           Size="147,42"
           Id="Package\Drop all tables"
@@ -17070,6 +18361,87 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="108,42"
+          Id="Package\Action"
+          TopLeft="371,916" />
+        <NodeLayout
+          Size="101,42"
+          Id="Package\Sequence Container\Date"
+          TopLeft="45,27" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="331,286"
+          Size="331,329"
+          Id="Package\Sequence Container"
+          TopLeft="256,538" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="424.5,349">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,67"
+              Start="0,0"
+              End="0,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="424,458">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,80"
+              Start="0,0"
+              End="0,72.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,72.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="423.25,867">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49"
+              Start="0,0"
+              End="0,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -17081,7 +18453,7 @@
         <NodeLayout
           Size="139,42"
           Id="Package\Load all data in one GO\Excel Source 1"
-          TopLeft="160,317" />
+          TopLeft="156,315" />
         <NodeLayout
           Size="139,42"
           Id="Package\Load all data in one GO\Excel Source 2"
@@ -17100,30 +18472,30 @@
           TopLeft="436,410" />
         <EdgeLayout
           Id="Package\Load all data in one GO.Paths[Excel Source Output]"
-          TopLeft="229.5,359">
+          TopLeft="225.5,357">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="233.1,51"
+              EndConnector="237.1,53"
               Start="0,0"
-              End="233.1,43.5">
+              End="237.1,45.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.4247990815155" />
+                    End="0,32.8140068886337" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.4247990815155"
-                    Point2="0,35.4247990815155"
-                    Point3="4,35.4247990815155" />
+                    Point1="0,32.8140068886337"
+                    Point2="0,36.8140068886337"
+                    Point3="4,36.8140068886337" />
                   <mssgle:LineSegment
-                    End="229.1,35.4247990815155" />
+                    End="233.1,36.8140068886337" />
                   <mssgle:CubicBezierSegment
-                    Point1="229.1,35.4247990815155"
-                    Point2="233.1,35.4247990815155"
-                    Point3="233.1,39.4247990815155" />
+                    Point1="233.1,36.8140068886337"
+                    Point2="237.1,36.8140068886337"
+                    Point3="237.1,40.8140068886337" />
                   <mssgle:LineSegment
-                    End="233.1,43.5" />
+                    End="237.1,45.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -17291,37 +18663,37 @@
         <NodeLayout
           Size="101,42"
           Id="Package\Load all data in one GO\Date"
-          TopLeft="196,869" />
+          TopLeft="197,870" />
         <NodeLayout
           Size="98,42"
           Id="Package\Load all data in one GO\Sort"
-          TopLeft="194,689" />
+          TopLeft="195,690" />
         <EdgeLayout
           Id="Package\Load all data in one GO.Paths[Multicast Output 1]"
-          TopLeft="476.333333333333,640">
+          TopLeft="453,640">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-233.333333333333,49"
+              EndConnector="-209,50"
               Start="0,0"
-              End="-233.333333333333,41.5">
+              End="-209,42.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.9868421052632" />
+                    End="0,7.53846153846154" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,15.9868421052632"
-                    Point2="0,19.9868421052632"
-                    Point3="-4,19.9868421052632" />
+                    Point1="0,7.53846153846154"
+                    Point2="0,11.5384615384615"
+                    Point3="-4,11.5384615384615" />
                   <mssgle:LineSegment
-                    End="-229.333333333333,19.9868421052632" />
+                    End="-205,11.5384615384615" />
                   <mssgle:CubicBezierSegment
-                    Point1="-229.333333333333,19.9868421052632"
-                    Point2="-233.333333333333,19.9868421052632"
-                    Point3="-233.333333333333,23.9868421052632" />
+                    Point1="-205,11.5384615384615"
+                    Point2="-209,11.5384615384615"
+                    Point3="-209,15.5384615384615" />
                   <mssgle:LineSegment
-                    End="-233.333333333333,41.5" />
+                    End="-209,42.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -17333,10 +18705,10 @@
         <NodeLayout
           Size="154,42"
           Id="Package\Load all data in one GO\Derived Column"
-          TopLeft="171,766" />
+          TopLeft="172,767" />
         <EdgeLayout
           Id="Package\Load all data in one GO.Paths[Sort Output]"
-          TopLeft="245.5,731">
+          TopLeft="246.5,732">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -17358,7 +18730,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load all data in one GO.Paths[Derived Column Output]"
-          TopLeft="247.25,808">
+          TopLeft="248.25,809">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -18083,6 +19455,137 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load all data in one GO\Tactic">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Date">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Sequence Container\Date\Sort"
+          TopLeft="79,258" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Sequence Container\Date\Derived Column"
+          TopLeft="46,340" />
+        <NodeLayout
+          Size="101,42"
+          Id="Package\Sequence Container\Date\Date"
+          TopLeft="74,414" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Sequence Container\Date\Excel Source 1"
+          TopLeft="60,60" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Sequence Container\Date\Conditional Split"
+          TopLeft="51,168" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Date.Paths[Excel Source Output]"
+          TopLeft="129,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,66"
+              Start="0,0"
+              End="0,58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Date.Paths[Case 1]"
+          TopLeft="128.25,210">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-15.2180859375,15.47314453125,30.436171875,9.5537109375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Date.Paths[Sort Output]"
+          TopLeft="125.5,300">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40"
+              Start="0,0"
+              End="0,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Date.Paths[Derived Column Output]"
+          TopLeft="123.75,382">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32"
+              Start="0,0"
+              End="0,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Date\Excel Source 1">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
