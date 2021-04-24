@@ -1,0 +1,16 @@
+Id;Location
+1; Street/Highway
+2;Public Transport
+3;Retail Premises
+4;Open ground (e.g. park, car park, field)
+5;Licensed Premises
+6;Sports or Event Stadia
+7;Hospital/A&E (non-mental-health setting)
+8;Mental Health Setting
+9; Police vehicle with prisoner handling cage
+10;Police vehicle without prisoner handling cage
+11;Dwelling
+12;Police station (excluding custody block)
+13;Custody Block
+14;Ambulance
+15;Other
