@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="34"
-  DTS:VersionGUID="{DF4A85CE-7111-4F82-962F-F3F93E24A972}">
+  DTS:VersionBuild="38"
+  DTS:VersionGUID="{0DE01C29-70F9-4884-B284-EBDE4547AD08}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1405,7 +1405,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{0529B54E-3B1F-4EAF-8E76-6F99C2BB943A}"
-          SQLTask:SqlStatementSource="-- Created by Vertabelo (http://vertabelo.com)&#xA;-- Last modification date: 2021-04-22 16:34:38.886&#xA;&#xA;-- tables&#xA;-- Table: Action&#xA;CREATE TABLE Action (&#xA;    Date_Id int  NOT NULL,&#xA;    Time_Id int  NOT NULL,&#xA;    Reason_for_force_Id int  NOT NULL,&#xA;    Deployed_Tactics_Id int  NOT NULL,&#xA;    Location_Id int  NOT NULL,&#xA;    SubjectData_Id int  NOT NULL,&#xA;    Outcomes_Id int  NOT NULL,&#xA;    CED_Id int  NOT NULL,&#xA;    Type_Od_Patrol_Id int  NOT NULL,&#xA;    CONSTRAINT Action_pk PRIMARY KEY  (Date_Id,Time_Id,Reason_for_force_Id,Deployed_Tactics_Id,Location_Id,SubjectData_Id,Outcomes_Id,CED_Id,Type_Od_Patrol_Id)&#xA;);&#xA;&#xA;-- Table: CED&#xA;CREATE TABLE CED (&#xA;    Id int  NOT NULL IDENTITY(1,1),&#xA;    CED_Drawn bit  NOT NULL,&#xA;    CED_Aimed bit  NOT NULL,&#xA;    CED_Arced bit  NOT NULL,&#xA;    CED_Drive_Stun bit  NOT NULL,&#xA;    CED_Drive_Stun_Repeat bit  NOT NULL,&#xA;    CED_Angle_Drive_Stun bit  NOT NULL,&#xA;    CED_Angle_Drive_Stun_Repeat bit  NOT NULL,&#xA;    CED_Fired bit  NOT NULL,&#xA;    CED_Fired_Number varchar(32)  NOT NULL,&#xA;    CED_Miss_Probe int  NOT NULL,&#xA;    CONSTRAINT CED_pk PRIMARY KEY  (Id)&#xA;);&#xA;&#xA;-- Table: Date&#xA;CREATE TABLE Date (&#xA;    Id int  NOT NULL IDENTITY(1,1),&#xA;    Year int  NOT NULL,&#xA;    Month int  NOT NULL,&#xA;    Day int  NOT NULL,&#xA;    Season nvarchar(32)  NOT NULL,&#xA;    CONSTRAINT Date_pk PRIMARY KEY  (Id)&#xA;);&#xA;&#xA;-- Table: Deployed_Tactics&#xA;CREATE TABLE Deployed_Tactics (&#xA;    Id int  NOT NULL IDENTITY(1,1),&#xA;    Depl_1 int  NULL,&#xA;    Effective_1 bit  NOT NULL,&#xA;    Depl_2 int  NULL,&#xA;    Effective_2 bit  NOT NULL,&#xA;    Depl_3 int  NULL,&#xA;    Effective_3 bit  NOT NULL,&#xA;    Depl_4 int  NULL,&#xA;    Effective_4 bit  NOT NULL,&#xA;    Depl_5 int  NULL,&#xA;    CONSTRAINT Deployed_Tactics_pk PRIMARY KEY  (Id)&#xA;);&#xA;&#xA;-- Table: Location&#xA;CREATE TABLE Location (&#xA;    Id int  NOT NULL IDENTITY(1,1),&#xA;    Location varchar(64)  NOT NULL,&#xA;    CONSTRAINT Location_pk PRIMARY KEY  (Id)&#xA;);&#xA;&#xA;-- Table: Outcomes&#xA;CREATE TABLE Outcomes (&#xA;    Id int  NOT NULL IDENTITY(1,1),&#xA;    Outcome varchar(64)  NOT NULL,&#xA;    CONSTRAINT Outcomes_pk PRIMARY KEY  (Id)&#xA;);&#xA;&#xA;-- Table: Reason_for_force&#xA;CREATE TABLE Reason_for_force (&#xA;    Id int  NOT NULL IDENTITY(1,1),&#xA;    Protect_self bit  NOT NULL,&#xA;    Protect_Public bit  NOT NULL,&#xA;    Protect_Subject bit  NOT NULL,&#xA;    Protect_Other_Officers bit  NOT NULL,&#xA;    Prevent_Offence bit  NOT NULL,&#xA;    Secure_Evidence bit  NOT NULL,&#xA;    Effect_Serach bit  NOT NULL,&#xA;    Effect_Arrest bit  NOT NULL,&#xA;    Method_of_Entry bit  NOT NULL,&#xA;    Remove_Handcuffs bit  NOT NULL,&#xA;    Prevent_Harm bit  NOT NULL,&#xA;    Prevent_Escape bit  NOT NULL,&#xA;    Other bit  NOT NULL,&#xA;    CONSTRAINT Reason_for_force_pk PRIMARY KEY  (Id)&#xA;);&#xA;&#xA;-- Table: SubjectData&#xA;CREATE TABLE SubjectData (&#xA;    Id int  NOT NULL IDENTITY(1,1),&#xA;    Gender bit  NOT NULL,&#xA;    PhysicalDisability bit  NOT NULL,&#xA;    MentalDisability bit  NOT NULL,&#xA;    AgeRange varchar(32)  NOT NULL,&#xA;    Ethnicy varchar(32)  NOT NULL,&#xA;    CONSTRAINT SubjectData_pk PRIMARY KEY  (Id)&#xA;);&#xA;&#xA;-- Table: Tactics&#xA;CREATE TABLE Tactics (&#xA;    Id int  NOT NULL IDENTITY(1,1),&#xA;    Tactic varchar(64)  NOT NULL,&#xA;    CONSTRAINT Tactics_pk PRIMARY KEY  (Id)&#xA;);&#xA;&#xA;-- Table: Time&#xA;CREATE TABLE Time (&#xA;    Id int  NOT NULL IDENTITY(1,1),&#xA;    Hour int  NOT NULL,&#xA;    Minute int  NOT NULL,&#xA;    CONSTRAINT Time_pk PRIMARY KEY  (Id)&#xA;);&#xA;&#xA;-- Table: Type_Od_Patrol&#xA;CREATE TABLE Type_Od_Patrol (&#xA;    Id int  NOT NULL IDENTITY(1,1),&#xA;    Type varchar(64)  NOT NULL,&#xA;    CONSTRAINT Type_Od_Patrol_pk PRIMARY KEY  (Id)&#xA;);&#xA;&#xA;-- foreign keys&#xA;-- Reference: Action_CED (table: Action)&#xA;ALTER TABLE Action ADD CONSTRAINT Action_CED&#xA;    FOREIGN KEY (CED_Id)&#xA;    REFERENCES CED (Id)&#xA;    ON DELETE  CASCADE &#xA;    ON UPDATE  CASCADE;&#xA;&#xA;-- Reference: Action_Date (table: Action)&#xA;ALTER TABLE Action ADD CONSTRAINT Action_Date&#xA;    FOREIGN KEY (Date_Id)&#xA;    REFERENCES Date (Id)&#xA;    ON DELETE  CASCADE &#xA;    ON UPDATE  CASCADE;&#xA;&#xA;-- Reference: Action_Deployed_Tactics (table: Action)&#xA;ALTER TABLE Action ADD CONSTRAINT Action_Deployed_Tactics&#xA;    FOREIGN KEY (Deployed_Tactics_Id)&#xA;    REFERENCES Deployed_Tactics (Id)&#xA;    ON DELETE  CASCADE &#xA;    ON UPDATE  CASCADE;&#xA;&#xA;-- Reference: Action_Location (table: Action)&#xA;ALTER TABLE Action ADD CONSTRAINT Action_Location&#xA;    FOREIGN KEY (Location_Id)&#xA;    REFERENCES Location (Id)&#xA;    ON DELETE  CASCADE &#xA;    ON UPDATE  CASCADE;&#xA;&#xA;-- Reference: Action_Outcomes (table: Action)&#xA;ALTER TABLE Action ADD CONSTRAINT Action_Outcomes&#xA;    FOREIGN KEY (Outcomes_Id)&#xA;    REFERENCES Outcomes (Id)&#xA;    ON DELETE  CASCADE &#xA;    ON UPDATE  CASCADE;&#xA;&#xA;-- Reference: Action_Reason_for_force (table: Action)&#xA;ALTER TABLE Action ADD CONSTRAINT Action_Reason_for_force&#xA;    FOREIGN KEY (Reason_for_force_Id)&#xA;    REFERENCES Reason_for_force (Id)&#xA;    ON DELETE  CASCADE &#xA;    ON UPDATE  CASCADE;&#xA;&#xA;-- Reference: Action_SubjectData (table: Action)&#xA;ALTER TABLE Action ADD CONSTRAINT Action_SubjectData&#xA;    FOREIGN KEY (SubjectData_Id)&#xA;    REFERENCES SubjectData (Id)&#xA;    ON DELETE  CASCADE &#xA;    ON UPDATE  CASCADE;&#xA;&#xA;-- Reference: Action_Time (table: Action)&#xA;ALTER TABLE Action ADD CONSTRAINT Action_Time&#xA;    FOREIGN KEY (Time_Id)&#xA;    REFERENCES Time (Id)&#xA;    ON DELETE  CASCADE &#xA;    ON UPDATE  CASCADE;&#xA;&#xA;-- Reference: Action_Type_Od_Patrol (table: Action)&#xA;ALTER TABLE Action ADD CONSTRAINT Action_Type_Od_Patrol&#xA;    FOREIGN KEY (Type_Od_Patrol_Id)&#xA;    REFERENCES Type_Od_Patrol (Id)&#xA;    ON DELETE  CASCADE &#xA;    ON UPDATE  CASCADE;&#xA;&#xA;-- Reference: Deployed_Tactics_Tactics_1 (table: Deployed_Tactics)&#xA;ALTER TABLE Deployed_Tactics ADD CONSTRAINT Deployed_Tactics_Tactics_1&#xA;    FOREIGN KEY (Depl_1)&#xA;    REFERENCES Tactics (Id);&#xA;&#xA;-- Reference: Deployed_Tactics_Tactics_2 (table: Deployed_Tactics)&#xA;ALTER TABLE Deployed_Tactics ADD CONSTRAINT Deployed_Tactics_Tactics_2&#xA;    FOREIGN KEY (Depl_2)&#xA;    REFERENCES Tactics (Id);&#xA;&#xA;-- Reference: Deployed_Tactics_Tactics_3 (table: Deployed_Tactics)&#xA;ALTER TABLE Deployed_Tactics ADD CONSTRAINT Deployed_Tactics_Tactics_3&#xA;    FOREIGN KEY (Depl_3)&#xA;    REFERENCES Tactics (Id);&#xA;&#xA;-- Reference: Deployed_Tactics_Tactics_4 (table: Deployed_Tactics)&#xA;ALTER TABLE Deployed_Tactics ADD CONSTRAINT Deployed_Tactics_Tactics_4&#xA;    FOREIGN KEY (Depl_4)&#xA;    REFERENCES Tactics (Id);&#xA;&#xA;-- Reference: Deployed_Tactics_Tactics_5 (table: Deployed_Tactics)&#xA;ALTER TABLE Deployed_Tactics ADD CONSTRAINT Deployed_Tactics_Tactics_5&#xA;    FOREIGN KEY (Depl_5)&#xA;    REFERENCES Tactics (Id);&#xA;&#xA;-- End of file.&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="-- Created by Vertabelo (http://vertabelo.com)&#xA;-- Last modification date: 2021-04-22 16:34:38.886&#xA;&#xA;-- tables&#xA;-- Table: Action&#xA;CREATE TABLE Action (&#xA;    Date_Id int  NOT NULL,&#xA;    Time_Id int  NOT NULL,&#xA;    Reason_for_force_Id int  NOT NULL,&#xA;    Deployed_Tactics_Id int  NOT NULL,&#xA;    Location_Id int  NOT NULL,&#xA;    SubjectData_Id int  NOT NULL,&#xA;    Outcomes_Id int  NOT NULL,&#xA;    CED_Id int  NOT NULL,&#xA;    Type_Od_Patrol_Id int  NOT NULL,&#xA;    CONSTRAINT Action_pk PRIMARY KEY  (Date_Id,Time_Id,Reason_for_force_Id,Deployed_Tactics_Id,Location_Id,SubjectData_Id,Outcomes_Id,CED_Id,Type_Od_Patrol_Id)&#xA;);&#xA;&#xA;-- Table: CED&#xA;CREATE TABLE CED (&#xA;    Id int  NOT NULL IDENTITY(1,1),&#xA;    CED_Drawn bit  NOT NULL,&#xA;    CED_Aimed bit  NOT NULL,&#xA;    CED_Arced bit  NOT NULL,&#xA;    CED_Drive_Stun bit  NOT NULL,&#xA;    CED_Drive_Stun_Repeat bit  NOT NULL,&#xA;    CED_Angle_Drive_Stun bit  NOT NULL,&#xA;    CED_Angle_Drive_Stun_Repeat bit  NOT NULL,&#xA;    CED_Fired bit  NOT NULL,&#xA;    CED_Fired_Number varchar(32)  NOT NULL,&#xA;    CED_Miss_Probe int  NOT NULL,&#xA;    CONSTRAINT CED_pk PRIMARY KEY  (Id)&#xA;);&#xA;&#xA;-- Table: Date&#xA;CREATE TABLE Date (&#xA;    Id int  NOT NULL IDENTITY(1,1),&#xA;    Year int  NOT NULL,&#xA;    Month int  NOT NULL,&#xA;    Day int  NOT NULL,&#xA;    Season nvarchar(32)  NOT NULL,&#xA;    CONSTRAINT Date_pk PRIMARY KEY  (Id)&#xA;);&#xA;&#xA;-- Table: Deployed_Tactics&#xA;CREATE TABLE Deployed_Tactics (&#xA;    Id int  NOT NULL IDENTITY(1,1),&#xA;    Depl_1 int  NULL,&#xA;    Effective_1 bit  NOT NULL,&#xA;    Depl_2 int  NULL,&#xA;    Effective_2 bit  NOT NULL,&#xA;    Depl_3 int  NULL,&#xA;    Effective_3 bit  NOT NULL,&#xA;    Depl_4 int  NULL,&#xA;    Effective_4 bit  NOT NULL,&#xA;    Depl_5 int  NULL,&#xA;&#x9;Effective_5 bit  NOT NULL,&#xA;    CONSTRAINT Deployed_Tactics_pk PRIMARY KEY  (Id)&#xA;);&#xA;&#xA;-- Table: Location&#xA;CREATE TABLE Location (&#xA;    Id int  NOT NULL IDENTITY(1,1),&#xA;    Location varchar(64)  NOT NULL,&#xA;    CONSTRAINT Location_pk PRIMARY KEY  (Id)&#xA;);&#xA;&#xA;-- Table: Outcomes&#xA;CREATE TABLE Outcomes (&#xA;    Id int  NOT NULL IDENTITY(1,1),&#xA;    Outcome varchar(64)  NOT NULL,&#xA;    CONSTRAINT Outcomes_pk PRIMARY KEY  (Id)&#xA;);&#xA;&#xA;-- Table: Reason_for_force&#xA;CREATE TABLE Reason_for_force (&#xA;    Id int  NOT NULL IDENTITY(1,1),&#xA;    Protect_self bit  NOT NULL,&#xA;    Protect_Public bit  NOT NULL,&#xA;    Protect_Subject bit  NOT NULL,&#xA;    Protect_Other_Officers bit  NOT NULL,&#xA;    Prevent_Offence bit  NOT NULL,&#xA;    Secure_Evidence bit  NOT NULL,&#xA;    Effect_Serach bit  NOT NULL,&#xA;    Effect_Arrest bit  NOT NULL,&#xA;    Method_of_Entry bit  NOT NULL,&#xA;    Remove_Handcuffs bit  NOT NULL,&#xA;    Prevent_Harm bit  NOT NULL,&#xA;    Prevent_Escape bit  NOT NULL,&#xA;    Other bit  NOT NULL,&#xA;    CONSTRAINT Reason_for_force_pk PRIMARY KEY  (Id)&#xA;);&#xA;&#xA;-- Table: SubjectData&#xA;CREATE TABLE SubjectData (&#xA;    Id int  NOT NULL IDENTITY(1,1),&#xA;    Gender bit  NOT NULL,&#xA;    PhysicalDisability bit  NOT NULL,&#xA;    MentalDisability bit  NOT NULL,&#xA;    AgeRange varchar(32)  NOT NULL,&#xA;    Ethnicy varchar(32)  NOT NULL,&#xA;    CONSTRAINT SubjectData_pk PRIMARY KEY  (Id)&#xA;);&#xA;&#xA;-- Table: Tactics&#xA;CREATE TABLE Tactics (&#xA;    Id int  NOT NULL IDENTITY(1,1),&#xA;    Tactic varchar(64)  NOT NULL,&#xA;    CONSTRAINT Tactics_pk PRIMARY KEY  (Id)&#xA;);&#xA;&#xA;-- Table: Time&#xA;CREATE TABLE Time (&#xA;    Id int  NOT NULL IDENTITY(1,1),&#xA;    Hour int  NOT NULL,&#xA;    Minute int  NOT NULL,&#xA;    CONSTRAINT Time_pk PRIMARY KEY  (Id)&#xA;);&#xA;&#xA;-- Table: Type_Od_Patrol&#xA;CREATE TABLE Type_Od_Patrol (&#xA;    Id int  NOT NULL IDENTITY(1,1),&#xA;    Type varchar(64)  NOT NULL,&#xA;    CONSTRAINT Type_Od_Patrol_pk PRIMARY KEY  (Id)&#xA;);&#xA;&#xA;-- foreign keys&#xA;-- Reference: Action_CED (table: Action)&#xA;ALTER TABLE Action ADD CONSTRAINT Action_CED&#xA;    FOREIGN KEY (CED_Id)&#xA;    REFERENCES CED (Id)&#xA;    ON DELETE  CASCADE &#xA;    ON UPDATE  CASCADE;&#xA;&#xA;-- Reference: Action_Date (table: Action)&#xA;ALTER TABLE Action ADD CONSTRAINT Action_Date&#xA;    FOREIGN KEY (Date_Id)&#xA;    REFERENCES Date (Id)&#xA;    ON DELETE  CASCADE &#xA;    ON UPDATE  CASCADE;&#xA;&#xA;-- Reference: Action_Deployed_Tactics (table: Action)&#xA;ALTER TABLE Action ADD CONSTRAINT Action_Deployed_Tactics&#xA;    FOREIGN KEY (Deployed_Tactics_Id)&#xA;    REFERENCES Deployed_Tactics (Id)&#xA;    ON DELETE  CASCADE &#xA;    ON UPDATE  CASCADE;&#xA;&#xA;-- Reference: Action_Location (table: Action)&#xA;ALTER TABLE Action ADD CONSTRAINT Action_Location&#xA;    FOREIGN KEY (Location_Id)&#xA;    REFERENCES Location (Id)&#xA;    ON DELETE  CASCADE &#xA;    ON UPDATE  CASCADE;&#xA;&#xA;-- Reference: Action_Outcomes (table: Action)&#xA;ALTER TABLE Action ADD CONSTRAINT Action_Outcomes&#xA;    FOREIGN KEY (Outcomes_Id)&#xA;    REFERENCES Outcomes (Id)&#xA;    ON DELETE  CASCADE &#xA;    ON UPDATE  CASCADE;&#xA;&#xA;-- Reference: Action_Reason_for_force (table: Action)&#xA;ALTER TABLE Action ADD CONSTRAINT Action_Reason_for_force&#xA;    FOREIGN KEY (Reason_for_force_Id)&#xA;    REFERENCES Reason_for_force (Id)&#xA;    ON DELETE  CASCADE &#xA;    ON UPDATE  CASCADE;&#xA;&#xA;-- Reference: Action_SubjectData (table: Action)&#xA;ALTER TABLE Action ADD CONSTRAINT Action_SubjectData&#xA;    FOREIGN KEY (SubjectData_Id)&#xA;    REFERENCES SubjectData (Id)&#xA;    ON DELETE  CASCADE &#xA;    ON UPDATE  CASCADE;&#xA;&#xA;-- Reference: Action_Time (table: Action)&#xA;ALTER TABLE Action ADD CONSTRAINT Action_Time&#xA;    FOREIGN KEY (Time_Id)&#xA;    REFERENCES Time (Id)&#xA;    ON DELETE  CASCADE &#xA;    ON UPDATE  CASCADE;&#xA;&#xA;-- Reference: Action_Type_Od_Patrol (table: Action)&#xA;ALTER TABLE Action ADD CONSTRAINT Action_Type_Od_Patrol&#xA;    FOREIGN KEY (Type_Od_Patrol_Id)&#xA;    REFERENCES Type_Od_Patrol (Id)&#xA;    ON DELETE  CASCADE &#xA;    ON UPDATE  CASCADE;&#xA;&#xA;-- Reference: Deployed_Tactics_Tactics_1 (table: Deployed_Tactics)&#xA;ALTER TABLE Deployed_Tactics ADD CONSTRAINT Deployed_Tactics_Tactics_1&#xA;    FOREIGN KEY (Depl_1)&#xA;    REFERENCES Tactics (Id);&#xA;&#xA;-- Reference: Deployed_Tactics_Tactics_2 (table: Deployed_Tactics)&#xA;ALTER TABLE Deployed_Tactics ADD CONSTRAINT Deployed_Tactics_Tactics_2&#xA;    FOREIGN KEY (Depl_2)&#xA;    REFERENCES Tactics (Id);&#xA;&#xA;-- Reference: Deployed_Tactics_Tactics_3 (table: Deployed_Tactics)&#xA;ALTER TABLE Deployed_Tactics ADD CONSTRAINT Deployed_Tactics_Tactics_3&#xA;    FOREIGN KEY (Depl_3)&#xA;    REFERENCES Tactics (Id);&#xA;&#xA;-- Reference: Deployed_Tactics_Tactics_4 (table: Deployed_Tactics)&#xA;ALTER TABLE Deployed_Tactics ADD CONSTRAINT Deployed_Tactics_Tactics_4&#xA;    FOREIGN KEY (Depl_4)&#xA;    REFERENCES Tactics (Id);&#xA;&#xA;-- Reference: Deployed_Tactics_Tactics_5 (table: Deployed_Tactics)&#xA;ALTER TABLE Deployed_Tactics ADD CONSTRAINT Deployed_Tactics_Tactics_5&#xA;    FOREIGN KEY (Depl_5)&#xA;    REFERENCES Tactics (Id);&#xA;&#xA;-- End of file.&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -7712,6 +7712,7 @@
           DTS:refId="Package\Sequence Container\Tactics"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
+          DTS:Disabled="True"
           DTS:DTSID="{5E301C70-063D-4511-9CF9-231454D3064D}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -7720,7 +7721,1969 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <pipeline
-              version="1" />
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\Tactics\Conditional Split"
+                  componentClassID="Microsoft.ConditionalSplit"
+                  contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+                  name="Conditional Split"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Tactics\Conditional Split.Inputs[Conditional Split Input]"
+                      description="Input to the Conditional Split Transformation"
+                      name="Conditional Split Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Tactics\Conditional Split.Inputs[Conditional Split Input].Columns[CarryingCED]"
+                          cachedCodepage="1250"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CarryingCED"
+                          lineageId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].Columns[CarryingCED]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Tactics\Conditional Split.Outputs[Case 1]"
+                      description="Output 1 of the Conditional Split Transformation"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Case 1"
+                      synchronousInputId="Package\Sequence Container\Tactics\Conditional Split.Inputs[Conditional Split Input]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                          name="Expression">#{Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].Columns[CarryingCED]} == "Yes"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the friendly version of the expression. This expression version uses column names."
+                          expressionType="Notify"
+                          name="FriendlyExpression">CarryingCED == "Yes"</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                          name="EvaluationOrder">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Tactics\Conditional Split.Outputs[Conditional Split Default Output]"
+                      description="Default Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      name="Conditional Split Default Output"
+                      synchronousInputId="Package\Sequence Container\Tactics\Conditional Split.Inputs[Conditional Split Input]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Tactics\Conditional Split.Outputs[Conditional Split Error Output]"
+                      description="Error Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Conditional Split Error Output"
+                      synchronousInputId="Package\Sequence Container\Tactics\Conditional Split.Inputs[Conditional Split Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Tactics\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Tactics\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Tactics\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Tactics\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Tactics\Flat File Source"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1045"
+                  name="Flat File Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Tactics\Flat File Source.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[CSV data format]"
+                      connectionManagerRefId="Package.ConnectionManagers[CSV data format]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].Columns[CarryingCED]"
+                          codePage="1250"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CarryingCED]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].Columns[CarryingCED]"
+                          name="CarryingCED"
+                          truncationRowDisposition="IgnoreFailure">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].Columns[Tactic 1]"
+                          codePage="1250"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Tactic 1]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].Columns[Tactic 1]"
+                          name="Tactic 1"
+                          truncationRowDisposition="IgnoreFailure">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].Columns[Tactic 2]"
+                          codePage="1250"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Tactic 2]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].Columns[Tactic 2]"
+                          name="Tactic 2"
+                          truncationRowDisposition="IgnoreFailure">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].Columns[Tactic 3]"
+                          codePage="1250"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Tactic 3]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].Columns[Tactic 3]"
+                          name="Tactic 3"
+                          truncationRowDisposition="IgnoreFailure">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].Columns[Tactic 4]"
+                          codePage="1250"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Tactic 4]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].Columns[Tactic 4]"
+                          name="Tactic 4"
+                          truncationRowDisposition="IgnoreFailure">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].Columns[Tactic 5]"
+                          codePage="1250"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Tactic 5]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].Columns[Tactic 5]"
+                          name="Tactic 5"
+                          truncationRowDisposition="IgnoreFailure">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[IncidentDate]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="IncidentDate" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[IncidentTime]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="IncidentTime" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Incident Location  Street Highway]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Incident Location  Street Highway" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Incident Location  Public Transport]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Incident Location  Public Transport" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Incident Location  Retail Premises]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Incident Location  Retail Premises" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Incident Location  Open ground (e g  park, car park, field)]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Incident Location  Open ground (e g  park, car park, field)" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Incident Location  Licensed Premises]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Incident Location  Licensed Premises" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Incident Location  Sports or Event Stadia]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Incident Location  Sports or Event Stadia" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Incident Location  Hospital A&amp;E (non-mental-health setting)]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Incident Location  Hospital A&amp;E (non-mental-health setting)" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Incident Location  Mental Health Setting]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Incident Location  Mental Health Setting" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Incident Location  Police vehicle with prisoner handling cage]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Incident Location  Police vehicle with prisoner handling cage" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Incident Location  Police vehicle without prisoner handling cage]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Incident Location  Police vehicle without prisoner handling cage" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Incident Location  Dwelling]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Incident Location  Dwelling" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Incident Location  Police station (excluding custody block)]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Incident Location  Police station (excluding custody block)" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Incident Location  Custody Block]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Incident Location  Custody Block" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Incident Location  Ambulance]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Incident Location  Ambulance" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Incident Location  Other]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Incident Location  Other" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Borough]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Borough" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PrimaryConduct]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="PrimaryConduct" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AssaultedBySubject]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="AssaultedBySubject" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ThreatenedWithWeapon]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="ThreatenedWithWeapon" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AssaultedWithWeapon]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="AssaultedWithWeapon" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Impact Factor  Possesion of a weapon]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Impact Factor  Possesion of a weapon" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Impact Factor  Alcohol]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Impact Factor  Alcohol" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Impact Factor  Drugs]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Impact Factor  Drugs" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Impact Factor  Mental Health]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Impact Factor  Mental Health" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Impact Factor  Prior Knowledge]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Impact Factor  Prior Knowledge" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Impact Factor  Size Gender Build]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Impact Factor  Size Gender Build" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Impact Factor  Acute Behavioural Disorder]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Impact Factor  Acute Behavioural Disorder" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Impact Factor  Crowd]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Impact Factor  Crowd" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Impact Factor  Other]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Impact Factor  Other" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Reason for Force  Protect self]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Reason for Force  Protect self" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Reason for Force  Protect Public]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Reason for Force  Protect Public" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Reason for Force  Protect Subject]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Reason for Force  Protect Subject" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Reason for Force  Protect Other Officers]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Reason for Force  Protect Other Officers" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Reason for Force  Prevent Offence]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Reason for Force  Prevent Offence" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Reason for Force  Secure Evidence]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Reason for Force  Secure Evidence" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Reason for Force  Effect Search]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Reason for Force  Effect Search" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Reason for Force  Effect Arrest]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Reason for Force  Effect Arrest" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Reason for Force  Method of Entry]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Reason for Force  Method of Entry" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Reason for Force  Remove Handcuffs]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Reason for Force  Remove Handcuffs" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Reason for Force  Prevent Harm]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Reason for Force  Prevent Harm" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Reason for Force  Prevent Escape]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Reason for Force  Prevent Escape" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Reason for Force  Other]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Reason for Force  Other" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MainDuty]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="MainDuty" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SingleCrewed]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="SingleCrewed" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TrainedCED]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="TrainedCED" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CarryingCED]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CarryingCED" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Tactic 1]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Tactic 1" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Effective 1]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Effective 1" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Tactic 2]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Tactic 2" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Effective 2]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Effective 2" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Tactic 3]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Tactic 3" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Effective 3]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Effective 3" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Tactic 4]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Tactic 4" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Effective 4]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Effective 4" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Tactic 5]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Tactic 5" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Effective 5]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Effective 5" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED Drawn]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED Drawn" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED Aimed]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED Aimed" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED Arced]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED Arced" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED Red-Dotted]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED Red-Dotted" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED Drive Stun]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED Drive Stun" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED Drive Stun Repeat Application]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED Drive Stun Repeat Application" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED Angle Drive Stun]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED Angle Drive Stun" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED Fired]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED Fired" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED Fired Cartridge Number]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED Fired Cartridge Number" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED Fired 5 Secs Cycle Interrupted]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED Fired 5 Secs Cycle Interrupted" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED Fired Repeat Cycle Same Cartridge]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED Fired Repeat Cycle Same Cartridge" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED Fired Total Number Of Cycles]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED Fired Total Number Of Cycles" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED Fired Cycle Extended Beyond 5 Secs]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED Fired Cycle Extended Beyond 5 Secs" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED Fired Miss With One Probe]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED Fired Miss With One Probe" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED Fired Miss With Both Probes]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED Fired Miss With Both Probes" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED2 Drawn]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED2 Drawn" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED2 Aimed]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED2 Aimed" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED2 ArCED2]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED2 ArCED2" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED2 Red-Dotted]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED2 Red-Dotted" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED2 Drive Stun]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED2 Drive Stun" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED2 Drive Stun Repeat Application]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED2 Drive Stun Repeat Application" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED2 Angle Drive Stun]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED2 Angle Drive Stun" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED2 Fired]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED2 Fired" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED2 Fired Cartridge Number]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED2 Fired Cartridge Number" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED2 Fired 5 Secs Cycle Interrupted]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED2 Fired 5 Secs Cycle Interrupted" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED2 Fired Repeat Cycle Same Cartridge]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED2 Fired Repeat Cycle Same Cartridge" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED2 Fired Total Number Of Cycles]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED2 Fired Total Number Of Cycles" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED2 Fired Cycle Extended Beyond 5 Secs]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED2 Fired Cycle Extended Beyond 5 Secs" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED2 Fired Miss With One Probe]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED2 Fired Miss With One Probe" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED2 Fired Miss With Both Probes]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED2 Fired Miss With Both Probes" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED3 Drawn]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED3 Drawn" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED3 Aimed]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED3 Aimed" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED3 ArCED3]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED3 ArCED3" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED3 Red-Dotted]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED3 Red-Dotted" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED3 Drive Stun]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED3 Drive Stun" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED3 Drive Stun Repeat Application]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED3 Drive Stun Repeat Application" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED3 Angle Drive Stun]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED3 Angle Drive Stun" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED3 Fired]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED3 Fired" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED3 Fired Cartridge Number]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED3 Fired Cartridge Number" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED3 Fired 5 Secs Cycle Interrupted]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED3 Fired 5 Secs Cycle Interrupted" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED3 Fired Repeat Cycle Same Cartridge]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED3 Fired Repeat Cycle Same Cartridge" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED3 Fired Total Number Of Cycles]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED3 Fired Total Number Of Cycles" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED3 Fired Cycle Extended Beyond 5 Secs]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED3 Fired Cycle Extended Beyond 5 Secs" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED3 Fired Miss With One Probe]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED3 Fired Miss With One Probe" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED3 Fired Miss With Both Probes]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED3 Fired Miss With Both Probes" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED4 Drawn]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED4 Drawn" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED4 Aimed]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED4 Aimed" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED4 ArCED4]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED4 ArCED4" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED4 Red-Dotted]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED4 Red-Dotted" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED4 Drive Stun]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED4 Drive Stun" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED4 Drive Stun Repeat Application]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED4 Drive Stun Repeat Application" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED4 Angle Drive Stun]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED4 Angle Drive Stun" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED4 Fired]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED4 Fired" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED4 Fired Cartridge Number]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED4 Fired Cartridge Number" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED4 Fired 5 Secs Cycle Interrupted]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED4 Fired 5 Secs Cycle Interrupted" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED4 Fired Repeat Cycle Same Cartridge]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED4 Fired Repeat Cycle Same Cartridge" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED4 Fired Total Number Of Cycles]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED4 Fired Total Number Of Cycles" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED4 Fired Cycle Extended Beyond 5 Secs]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED4 Fired Cycle Extended Beyond 5 Secs" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED4 Fired Miss With One Probe]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED4 Fired Miss With One Probe" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CED4 Fired Miss With Both Probes]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="CED4 Fired Miss With Both Probes" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Firearms Aimed]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Firearms Aimed" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Firearms Fired]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Firearms Fired" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SubjectAge]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="SubjectAge" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SubjectGender]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="SubjectGender" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SubjectEthnicity]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="SubjectEthnicity" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PhysicalDisability]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="PhysicalDisability" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MentalDisability]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="MentalDisability" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[StaffInjured]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="StaffInjured" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[StaffInjuryIntentional]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="StaffInjuryIntentional" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[StaffInjuryLevel]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="StaffInjuryLevel" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[StaffMedProvided]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="StaffMedProvided" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SubjectInjured]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="SubjectInjured" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SubjectNatureOfInjury]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="SubjectNatureOfInjury" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SubjectMedOffered]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="SubjectMedOffered" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SubjectMedProvided]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="SubjectMedProvided" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Outcome  Made off escaped]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Outcome  Made off escaped" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Outcome  Arrested]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Outcome  Arrested" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Outcome  Hospitalised]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Outcome  Hospitalised" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Outcome  Detained - Mental Health Act]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Outcome  Detained - Mental Health Act" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Outcome  Fatality]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Outcome  Fatality" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Outcome  Other]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          name="Outcome  Other" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1250"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Tactics\Multicast"
+                  componentClassID="Microsoft.Multicast"
+                  contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+                  name="Multicast">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Tactics\Multicast.Inputs[Multicast Input 1]"
+                      name="Multicast Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Tactics\Multicast.Outputs[Multicast Output 1]"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 1"
+                      synchronousInputId="Package\Sequence Container\Tactics\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Tactics\Multicast.Outputs[Multicast Output 2]"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 2"
+                      synchronousInputId="Package\Sequence Container\Tactics\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Tactics\Multicast.Outputs[Multicast Output 3]"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 3"
+                      synchronousInputId="Package\Sequence Container\Tactics\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Tactics\Multicast.Outputs[Multicast Output 4]"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 4"
+                      synchronousInputId="Package\Sequence Container\Tactics\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Tactics\Multicast.Outputs[Multicast Output 5]"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 5"
+                      synchronousInputId="Package\Sequence Container\Tactics\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Tactics\Multicast.Outputs[Multicast Output 6]"
+                      dangling="true"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 6"
+                      synchronousInputId="Package\Sequence Container\Tactics\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Tactics\Sort"
+                  componentClassID="Microsoft.Sort"
+                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+                  name="Sort"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                      name="EliminateDuplicates">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the maximum number of threads to use for sorting."
+                      expressionType="Notify"
+                      name="MaximumThreads">-1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Tactics\Sort.Inputs[Sort Input]"
+                      name="Sort Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Tactics\Sort.Inputs[Sort Input].Columns[Tactic 1]"
+                          cachedCodepage="1250"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Tactic 1"
+                          lineageId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].Columns[Tactic 1]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">1</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Tactics\Sort.Outputs[Sort Output]"
+                      isSorted="true"
+                      name="Sort Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Tactics\Sort.Outputs[Sort Output].Columns[Tactic 1]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Sequence Container\Tactics\Sort.Outputs[Sort Output].Columns[Tactic 1]"
+                          name="Tactic 1"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].Columns[Tactic 1]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Tactics\Sort 1"
+                  componentClassID="Microsoft.Sort"
+                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+                  name="Sort 1"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                      name="EliminateDuplicates">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the maximum number of threads to use for sorting."
+                      expressionType="Notify"
+                      name="MaximumThreads">-1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Tactics\Sort 1.Inputs[Sort Input]"
+                      name="Sort Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Tactics\Sort 1.Inputs[Sort Input].Columns[Tactic 2]"
+                          cachedCodepage="1250"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Tactic 2"
+                          lineageId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].Columns[Tactic 2]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">1</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Tactics\Sort 1.Outputs[Sort Output]"
+                      isSorted="true"
+                      name="Sort Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Tactics\Sort 1.Outputs[Sort Output].Columns[Tactic 2]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Sequence Container\Tactics\Sort 1.Outputs[Sort Output].Columns[Tactic 2]"
+                          name="Tactic 2"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].Columns[Tactic 2]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Tactics\Sort 2"
+                  componentClassID="Microsoft.Sort"
+                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+                  name="Sort 2"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                      name="EliminateDuplicates">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the maximum number of threads to use for sorting."
+                      expressionType="Notify"
+                      name="MaximumThreads">-1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Tactics\Sort 2.Inputs[Sort Input]"
+                      name="Sort Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Tactics\Sort 2.Inputs[Sort Input].Columns[Tactic 3]"
+                          cachedCodepage="1250"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Tactic 3"
+                          lineageId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].Columns[Tactic 3]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">1</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Tactics\Sort 2.Outputs[Sort Output]"
+                      isSorted="true"
+                      name="Sort Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Tactics\Sort 2.Outputs[Sort Output].Columns[Tactic 3]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Sequence Container\Tactics\Sort 2.Outputs[Sort Output].Columns[Tactic 3]"
+                          name="Tactic 3"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].Columns[Tactic 3]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Tactics\Sort 3"
+                  componentClassID="Microsoft.Sort"
+                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+                  name="Sort 3"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                      name="EliminateDuplicates">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the maximum number of threads to use for sorting."
+                      expressionType="Notify"
+                      name="MaximumThreads">-1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Tactics\Sort 3.Inputs[Sort Input]"
+                      name="Sort Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Tactics\Sort 3.Inputs[Sort Input].Columns[Tactic 4]"
+                          cachedCodepage="1250"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Tactic 4"
+                          lineageId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].Columns[Tactic 4]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">1</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Tactics\Sort 3.Outputs[Sort Output]"
+                      isSorted="true"
+                      name="Sort Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Tactics\Sort 3.Outputs[Sort Output].Columns[Tactic 4]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Sequence Container\Tactics\Sort 3.Outputs[Sort Output].Columns[Tactic 4]"
+                          name="Tactic 4"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].Columns[Tactic 4]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Tactics\Sort 4"
+                  componentClassID="Microsoft.Sort"
+                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+                  name="Sort 4"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                      name="EliminateDuplicates">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the maximum number of threads to use for sorting."
+                      expressionType="Notify"
+                      name="MaximumThreads">-1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Tactics\Sort 4.Inputs[Sort Input]"
+                      name="Sort Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Tactics\Sort 4.Inputs[Sort Input].Columns[Tactic 5]"
+                          cachedCodepage="1250"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Tactic 5"
+                          lineageId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].Columns[Tactic 5]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">1</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Tactics\Sort 4.Outputs[Sort Output]"
+                      isSorted="true"
+                      name="Sort Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Tactics\Sort 4.Outputs[Sort Output].Columns[Tactic 5]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Sequence Container\Tactics\Sort 4.Outputs[Sort Output].Columns[Tactic 5]"
+                          name="Tactic 5"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output].Columns[Tactic 5]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Tactics\Sort 5"
+                  componentClassID="Microsoft.Sort"
+                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+                  name="Sort 5"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                      name="EliminateDuplicates">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the maximum number of threads to use for sorting."
+                      expressionType="Notify"
+                      name="MaximumThreads">-1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Tactics\Sort 5.Inputs[Sort Input]"
+                      name="Sort Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Tactics\Sort 5.Inputs[Sort Input].Columns[Tactic 1]"
+                          cachedCodepage="1250"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Tactic 1"
+                          lineageId="Package\Sequence Container\Tactics\Union All.Outputs[Union All Output 1].Columns[Tactic 1]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">1</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Tactics\Sort 5.Outputs[Sort Output]"
+                      isSorted="true"
+                      name="Sort Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Tactics\Sort 5.Outputs[Sort Output].Columns[Tactic 1]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Sequence Container\Tactics\Sort 5.Outputs[Sort Output].Columns[Tactic 1]"
+                          name="Tactic 1"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence Container\Tactics\Union All.Outputs[Union All Output 1].Columns[Tactic 1]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Tactics\Tactics"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Tactics"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Tactics]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1250</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Tactics\Tactics.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[db-mssql.s17149]"
+                      connectionManagerRefId="Package.ConnectionManagers[db-mssql.s17149]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Tactics\Tactics.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Tactics\Tactics.Inputs[OLE DB Destination Input].Columns[Tactic 1]"
+                          cachedCodepage="1250"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Tactic 1"
+                          cachedSortKeyPosition="1"
+                          externalMetadataColumnId="Package\Sequence Container\Tactics\Tactics.Inputs[OLE DB Destination Input].ExternalColumns[Tactic]"
+                          lineageId="Package\Sequence Container\Tactics\Sort 5.Outputs[Sort Output].Columns[Tactic 1]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Tactics.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                          dataType="i4"
+                          name="Id" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Tactics\Tactics.Inputs[OLE DB Destination Input].ExternalColumns[Tactic]"
+                          codePage="1250"
+                          dataType="str"
+                          length="64"
+                          name="Tactic" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Tactics\Tactics.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Tactics\Tactics.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Tactics\Tactics.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Tactics\Tactics.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Tactics\Tactics.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Tactics\Tactics.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Tactics\Union All"
+                  componentClassID="Microsoft.UnionAll"
+                  contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+                  name="Union All"
+                  version="1">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Tactics\Union All.Inputs[Union All Input 1]"
+                      name="Union All Input 1">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Tactics\Union All.Inputs[Union All Input 1].Columns[Tactic 1]"
+                          cachedCodepage="1250"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Tactic 1"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Sequence Container\Tactics\Sort.Outputs[Sort Output].Columns[Tactic 1]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence Container\Tactics\Union All.Outputs[Union All Output 1].Columns[Tactic 1]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Sequence Container\Tactics\Union All.Inputs[Union All Input 2]"
+                      hasSideEffects="true"
+                      name="Union All Input 2">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Tactics\Union All.Inputs[Union All Input 2].Columns[Tactic 2]"
+                          cachedCodepage="1250"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Tactic 2"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Sequence Container\Tactics\Sort 1.Outputs[Sort Output].Columns[Tactic 2]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence Container\Tactics\Union All.Outputs[Union All Output 1].Columns[Tactic 1]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Sequence Container\Tactics\Union All.Inputs[Union All Input 3]"
+                      hasSideEffects="true"
+                      name="Union All Input 3">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Tactics\Union All.Inputs[Union All Input 3].Columns[Tactic 3]"
+                          cachedCodepage="1250"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Tactic 3"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Sequence Container\Tactics\Sort 2.Outputs[Sort Output].Columns[Tactic 3]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence Container\Tactics\Union All.Outputs[Union All Output 1].Columns[Tactic 1]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Sequence Container\Tactics\Union All.Inputs[Union All Input 4]"
+                      hasSideEffects="true"
+                      name="Union All Input 4">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Tactics\Union All.Inputs[Union All Input 4].Columns[Tactic 4]"
+                          cachedCodepage="1250"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Tactic 4"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Sequence Container\Tactics\Sort 3.Outputs[Sort Output].Columns[Tactic 4]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence Container\Tactics\Union All.Outputs[Union All Output 1].Columns[Tactic 1]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Sequence Container\Tactics\Union All.Inputs[Union All Input 5]"
+                      hasSideEffects="true"
+                      name="Union All Input 5">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Tactics\Union All.Inputs[Union All Input 5].Columns[Tactic 5]"
+                          cachedCodepage="1250"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Tactic 5"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Sequence Container\Tactics\Sort 4.Outputs[Sort Output].Columns[Tactic 5]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence Container\Tactics\Union All.Outputs[Union All Output 1].Columns[Tactic 1]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Sequence Container\Tactics\Union All.Inputs[Union All Input 6]"
+                      dangling="true"
+                      hasSideEffects="true"
+                      name="Union All Input 6">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Tactics\Union All.Outputs[Union All Output 1]"
+                      name="Union All Output 1">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Tactics\Union All.Outputs[Union All Output 1].Columns[Tactic 1]"
+                          codePage="1250"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Sequence Container\Tactics\Union All.Outputs[Union All Output 1].Columns[Tactic 1]"
+                          name="Tactic 1" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\Tactics.Paths[Case 1]"
+                  endId="Package\Sequence Container\Tactics\Multicast.Inputs[Multicast Input 1]"
+                  name="Case 1"
+                  startId="Package\Sequence Container\Tactics\Conditional Split.Outputs[Case 1]" />
+                <path
+                  refId="Package\Sequence Container\Tactics.Paths[Flat File Source Output]"
+                  endId="Package\Sequence Container\Tactics\Conditional Split.Inputs[Conditional Split Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Sequence Container\Tactics\Flat File Source.Outputs[Flat File Source Output]" />
+                <path
+                  refId="Package\Sequence Container\Tactics.Paths[Multicast Output 1]"
+                  endId="Package\Sequence Container\Tactics\Sort.Inputs[Sort Input]"
+                  name="Multicast Output 1"
+                  startId="Package\Sequence Container\Tactics\Multicast.Outputs[Multicast Output 1]" />
+                <path
+                  refId="Package\Sequence Container\Tactics.Paths[Multicast Output 2]"
+                  endId="Package\Sequence Container\Tactics\Sort 1.Inputs[Sort Input]"
+                  name="Multicast Output 2"
+                  startId="Package\Sequence Container\Tactics\Multicast.Outputs[Multicast Output 2]" />
+                <path
+                  refId="Package\Sequence Container\Tactics.Paths[Multicast Output 3]"
+                  endId="Package\Sequence Container\Tactics\Sort 2.Inputs[Sort Input]"
+                  name="Multicast Output 3"
+                  startId="Package\Sequence Container\Tactics\Multicast.Outputs[Multicast Output 3]" />
+                <path
+                  refId="Package\Sequence Container\Tactics.Paths[Multicast Output 4]"
+                  endId="Package\Sequence Container\Tactics\Sort 3.Inputs[Sort Input]"
+                  name="Multicast Output 4"
+                  startId="Package\Sequence Container\Tactics\Multicast.Outputs[Multicast Output 4]" />
+                <path
+                  refId="Package\Sequence Container\Tactics.Paths[Multicast Output 5]"
+                  endId="Package\Sequence Container\Tactics\Sort 4.Inputs[Sort Input]"
+                  name="Multicast Output 5"
+                  startId="Package\Sequence Container\Tactics\Multicast.Outputs[Multicast Output 5]" />
+                <path
+                  refId="Package\Sequence Container\Tactics.Paths[Sort Output]"
+                  endId="Package\Sequence Container\Tactics\Union All.Inputs[Union All Input 1]"
+                  name="Sort Output"
+                  startId="Package\Sequence Container\Tactics\Sort.Outputs[Sort Output]" />
+                <path
+                  refId="Package\Sequence Container\Tactics.Paths[Sort Output1]"
+                  endId="Package\Sequence Container\Tactics\Union All.Inputs[Union All Input 2]"
+                  name="Sort Output"
+                  startId="Package\Sequence Container\Tactics\Sort 1.Outputs[Sort Output]" />
+                <path
+                  refId="Package\Sequence Container\Tactics.Paths[Sort Output2]"
+                  endId="Package\Sequence Container\Tactics\Union All.Inputs[Union All Input 3]"
+                  name="Sort Output"
+                  startId="Package\Sequence Container\Tactics\Sort 2.Outputs[Sort Output]" />
+                <path
+                  refId="Package\Sequence Container\Tactics.Paths[Sort Output3]"
+                  endId="Package\Sequence Container\Tactics\Union All.Inputs[Union All Input 4]"
+                  name="Sort Output"
+                  startId="Package\Sequence Container\Tactics\Sort 3.Outputs[Sort Output]" />
+                <path
+                  refId="Package\Sequence Container\Tactics.Paths[Sort Output4]"
+                  endId="Package\Sequence Container\Tactics\Union All.Inputs[Union All Input 5]"
+                  name="Sort Output"
+                  startId="Package\Sequence Container\Tactics\Sort 4.Outputs[Sort Output]" />
+                <path
+                  refId="Package\Sequence Container\Tactics.Paths[Sort Output5]"
+                  endId="Package\Sequence Container\Tactics\Tactics.Inputs[OLE DB Destination Input]"
+                  name="Sort Output"
+                  startId="Package\Sequence Container\Tactics\Sort 5.Outputs[Sort Output]" />
+                <path
+                  refId="Package\Sequence Container\Tactics.Paths[Union All Output 1]"
+                  endId="Package\Sequence Container\Tactics\Sort 5.Inputs[Sort Input]"
+                  name="Union All Output 1"
+                  startId="Package\Sequence Container\Tactics\Union All.Outputs[Union All Output 1]" />
+              </paths>
+            </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -11381,6 +13344,476 @@
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Tactics">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="111,42"
+          Id="Package\Sequence Container\Tactics\Tactics"
+          TopLeft="79,532" />
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Sequence Container\Tactics\Sort"
+          TopLeft="88,251" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Sequence Container\Tactics\Conditional Split"
+          TopLeft="60,155" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Sequence Container\Tactics\Flat File Source"
+          TopLeft="68,60" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Tactics.Paths[Flat File Source Output]"
+          TopLeft="140.5,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53"
+              Start="0,0"
+              End="0,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Sequence Container\Tactics\Sort 1"
+          TopLeft="250,253" />
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Sequence Container\Tactics\Sort 2"
+          TopLeft="419,260" />
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Sequence Container\Tactics\Sort 3"
+          TopLeft="580,258" />
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Sequence Container\Tactics\Sort 4"
+          TopLeft="740,260" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Sequence Container\Tactics\Sort 5"
+          TopLeft="77,426" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Sequence Container\Tactics\Union All"
+          TopLeft="75,329" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Tactics.Paths[Sort Output]"
+          TopLeft="136.25,293">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Tactics.Paths[Sort Output1]"
+          TopLeft="299,295">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-144.666666666667,34"
+              Start="0,0"
+              End="-144.666666666667,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.1337683523654" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.1337683523654"
+                    Point2="0,20.1337683523654"
+                    Point3="-4,20.1337683523654" />
+                  <mssgle:LineSegment
+                    End="-140.666666666667,20.1337683523654" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-140.666666666667,20.1337683523654"
+                    Point2="-144.666666666667,20.1337683523654"
+                    Point3="-144.666666666667,24.1337683523654" />
+                  <mssgle:LineSegment
+                    End="-144.666666666667,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Tactics.Paths[Sort Output2]"
+          TopLeft="468,302">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-304.25,27"
+              Start="0,0"
+              End="-304.25,19.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.6118598382749" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.6118598382749"
+                    Point2="0,17.6118598382749"
+                    Point3="-4,17.6118598382749" />
+                  <mssgle:LineSegment
+                    End="-300.25,17.6118598382749" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-300.25,17.6118598382749"
+                    Point2="-304.25,17.6118598382749"
+                    Point3="-304.25,21.6118598382749" />
+                  <mssgle:LineSegment
+                    End="-304.25,19.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Tactics.Paths[Sort Output3]"
+          TopLeft="629,300">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-459.6,29"
+              Start="0,0"
+              End="-459.6,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.1435132032147" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.1435132032147"
+                    Point2="0,20.1435132032147"
+                    Point3="-4,20.1435132032147" />
+                  <mssgle:LineSegment
+                    End="-455.6,20.1435132032147" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-455.6,20.1435132032147"
+                    Point2="-459.6,20.1435132032147"
+                    Point3="-459.6,24.1435132032147" />
+                  <mssgle:LineSegment
+                    End="-459.6,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Tactics.Paths[Sort Output4]"
+          TopLeft="789,302">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-615.833333333333,27"
+              Start="0,0"
+              End="-615.833333333333,19.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.602" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.602"
+                    Point2="0,19.602"
+                    Point3="-4,19.602" />
+                  <mssgle:LineSegment
+                    End="-611.833333333333,19.602" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-611.833333333333,19.602"
+                    Point2="-615.833333333333,19.602"
+                    Point3="-615.833333333333,23.602" />
+                  <mssgle:LineSegment
+                    End="-615.833333333333,19.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Tactics.Paths[Union All Output 1]"
+          TopLeft="133,371">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55"
+              Start="0,0"
+              End="0,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Tactics.Paths[Sort Output5]"
+          TopLeft="132.5,468">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64"
+              Start="0,0"
+              End="0,56.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="120,42"
+          Id="Package\Sequence Container\Tactics\Multicast"
+          TopLeft="255,159" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Tactics.Paths[Case 1]"
+          TopLeft="215,178">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="40,0"
+              Start="0,0"
+              End="32.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="32.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="1.0319140625,5,30.436171875,9.5537109375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Tactics.Paths[Multicast Output 1]"
+          TopLeft="315,201">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-178,50"
+              Start="0,0"
+              End="-178,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21"
+                    Point2="0,25"
+                    Point3="-4,25" />
+                  <mssgle:LineSegment
+                    End="-174,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-174,25"
+                    Point2="-178,25"
+                    Point3="-178,29" />
+                  <mssgle:LineSegment
+                    End="-178,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Tactics.Paths[Multicast Output 2]"
+          TopLeft="333.666666666667,201">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-34.6666666666666,52"
+              Start="0,0"
+              End="-34.6666666666666,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.2105263157895" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.2105263157895"
+                    Point2="0,21.2105263157895"
+                    Point3="-4,21.2105263157895" />
+                  <mssgle:LineSegment
+                    End="-30.6666666666666,21.2105263157895" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-30.6666666666666,21.2105263157895"
+                    Point2="-34.6666666666666,21.2105263157895"
+                    Point3="-34.6666666666666,25.2105263157895" />
+                  <mssgle:LineSegment
+                    End="-34.6666666666666,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Tactics.Paths[Multicast Output 3]"
+          TopLeft="343,201">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="125,59"
+              Start="0,0"
+              End="125,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5217391304348" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.5217391304348"
+                    Point2="0,20.5217391304348"
+                    Point3="4,20.5217391304348" />
+                  <mssgle:LineSegment
+                    End="121,20.5217391304348" />
+                  <mssgle:CubicBezierSegment
+                    Point1="121,20.5217391304348"
+                    Point2="125,20.5217391304348"
+                    Point3="125,24.5217391304348" />
+                  <mssgle:LineSegment
+                    End="125,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Tactics.Paths[Multicast Output 4]"
+          TopLeft="348.6,201">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="280.4,57"
+              Start="0,0"
+              End="280.4,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.4166666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.4166666666667"
+                    Point2="0,17.4166666666667"
+                    Point3="4,17.4166666666667" />
+                  <mssgle:LineSegment
+                    End="276.4,17.4166666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="276.4,17.4166666666667"
+                    Point2="280.4,17.4166666666667"
+                    Point3="280.4,21.4166666666667" />
+                  <mssgle:LineSegment
+                    End="280.4,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Tactics.Paths[Multicast Output 5]"
+          TopLeft="352.333333333333,201">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="436.666666666667,59"
+              Start="0,0"
+              End="436.666666666667,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.1774193548387" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.1774193548387"
+                    Point2="0,16.1774193548387"
+                    Point3="4,16.1774193548387" />
+                  <mssgle:LineSegment
+                    End="432.666666666667,16.1774193548387" />
+                  <mssgle:CubicBezierSegment
+                    Point1="432.666666666667,16.1774193548387"
+                    Point2="436.666666666667,16.1774193548387"
+                    Point3="436.666666666667,20.1774193548387" />
+                  <mssgle:LineSegment
+                    End="436.666666666667,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Sequence Container\Time\Time">
     <Properties>
@@ -11448,6 +13881,19 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Sequence Container\ReasonForForce\Reason">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Tactics\Tactics">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
