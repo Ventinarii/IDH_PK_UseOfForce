@@ -6,6 +6,36 @@
     <Name>MultidimensionalLab06.database</Name>
     <FullPath>MultidimensionalLab06.database</FullPath>
   </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>Nasz Bank Gwiazda.cube</Name>
+      <FullPath>Nasz Bank Gwiazda.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>Nasz Bank Gwiazda.partitions</Name>
+          <FullPath>Nasz Bank Gwiazda.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
+  <Dimensions>
+    <ProjectItem>
+      <Name>Rodzaj Operacji.dim</Name>
+      <FullPath>Rodzaj Operacji.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Rachunek.dim</Name>
+      <FullPath>Rachunek.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Czas.dim</Name>
+      <FullPath>Czas.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Oddzial Banku.dim</Name>
+      <FullPath>Oddzial Banku.dim</FullPath>
+    </ProjectItem>
+  </Dimensions>
   <DataSources>
     <ProjectItem>
       <Name>s17149.ds</Name>
@@ -18,6 +48,12 @@
       <FullPath>BankGwiazda.dsv</FullPath>
     </ProjectItem>
   </DataSourceViews>
+  <Roles>
+    <ProjectItem>
+      <Name>Role.role</Name>
+      <FullPath>Role.role</FullPath>
+    </ProjectItem>
+  </Roles>
   <Configurations>
     <Configuration>
       <Name>Development</Name>
