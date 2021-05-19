@@ -49,7 +49,11 @@
     <Reports>@(Report)</Reports>
   </PropertyGroup>
   <ItemGroup>
+    <DataSet Include="DataSet1.rsd" />
+  </ItemGroup>
+  <ItemGroup>
     <DataSource Include="NaszBanks17149.rds" />
+    <DataSource Include="SourceRok.rds" />
   </ItemGroup>
   <ItemGroup>
     <Report Include="Report1.rdl" />

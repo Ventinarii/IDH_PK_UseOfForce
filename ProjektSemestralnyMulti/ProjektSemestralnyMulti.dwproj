@@ -26,14 +26,14 @@
           <ConfigurationSetting>
             <Id>s17149</Id>
             <Name>s17149</Name>
-            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=db-mssql;Integrated Security=SSPI;Initial Catalog=s17149</Value>
+            <Value xsi:type="xsd:string">Data Source=db-mssql;User ID=;Initial Catalog=pr17149_15525;Provider=SQLNCLI11.1;Auto Translate=False</Value>
           </ConfigurationSetting>
         </ConnectionMappings>
         <ConnectionSecurityMappings>
           <ConfigurationSetting>
             <Id>s17149</Id>
             <Name>s17149</Name>
-            <Value xsi:type="xsd:int">0</Value>
+            <Value xsi:type="xsd:int">1</Value>
           </ConfigurationSetting>
         </ConnectionSecurityMappings>
       </Options>
