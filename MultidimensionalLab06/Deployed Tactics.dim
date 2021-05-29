@@ -1,0 +1,181 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="43cb84b7-f598-485c-8996-82ef712ceb84" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Deployed Tactics</ID>
+  <Name>Deployed Tactics</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="eae9c040-0a1c-4082-b60d-e9ad0ef09928">
+    <DataSourceViewID>UseOfForce</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="876b541b-e1c2-47d3-873e-892e5756a538">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="b3f5f9db-e556-4b59-b353-13941dc52543">
+      <ID>Id</ID>
+      <Name>Id</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6ef01294-58f1-4dc9-95da-bad1a58dc18f">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="48e9736f-ada2-43af-8504-2a551105b9d1">
+            <TableID>dbo_Deployed_Tactics</TableID>
+            <ColumnID>Id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="d3b01929-26ab-426e-acc8-4c6670d2ff1b">
+          <AttributeID>Depl 4</AttributeID>
+          <Name>Depl 4</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="1f42fdd6-ebd0-44af-af3d-5cc325a50f57">
+          <AttributeID>Depl 3</AttributeID>
+          <Name>Depl 3</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="8ac9e2f7-6f4f-4434-ba00-c12ed0a1e67b">
+          <AttributeID>Depl 5</AttributeID>
+          <Name>Depl 5</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f330f78c-e54f-4b8a-baaa-14e48b0b5be8">
+          <AttributeID>Depl 2</AttributeID>
+          <Name>Depl 2</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a7f10760-57f5-428d-8f83-a257ffdee95b">
+          <AttributeID>Depl 1</AttributeID>
+          <Name>Depl 1</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="6195ed36-0702-45d8-b954-d1d488395617">
+      <ID>Depl 4</ID>
+      <Name>Depl 4</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="26e848ed-3318-40ed-9a1c-3c4a2c344089">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="66c900cf-0f47-4f5b-998b-ed9d9c55e446">
+            <TableID>dbo_Deployed_Tactics</TableID>
+            <ColumnID>Depl_4</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f3fa40cb-1af1-40d5-81fd-13579ccbf5bb">
+      <ID>Depl 3</ID>
+      <Name>Depl 3</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="91754712-ca4d-4f7f-9848-d55a2ee54919">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d74816a8-9564-48c6-ac94-73e5fb5a7daa">
+            <TableID>dbo_Deployed_Tactics</TableID>
+            <ColumnID>Depl_3</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a15a2952-b994-4adb-a2b4-f2f492b0057a">
+      <ID>Depl 5</ID>
+      <Name>Depl 5</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="5bed5f8d-a700-4979-89f3-2cf3a9bc49ce">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="494037ad-0a81-493c-8407-46deee0f67b1">
+            <TableID>dbo_Deployed_Tactics</TableID>
+            <ColumnID>Depl_5</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="905a76da-4bf7-486c-b805-b900820486af">
+      <ID>Depl 2</ID>
+      <Name>Depl 2</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="041053df-afd5-42ac-9eca-45bce3eca465">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="cc763518-cb0c-4f12-ab10-3e993d07971b">
+            <TableID>dbo_Deployed_Tactics</TableID>
+            <ColumnID>Depl_2</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="33d08fff-1697-41c0-a80b-7917401cccf5">
+      <ID>Depl 1</ID>
+      <Name>Depl 1</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0f546528-96f9-4764-b333-979021474c97">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a5ce4f4a-bd3a-4829-832e-4aae45c329de">
+            <TableID>dbo_Deployed_Tactics</TableID>
+            <ColumnID>Depl_1</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

@@ -8,32 +8,56 @@
   </Database>
   <Cubes>
     <ProjectItem>
-      <Name>Nasz Bank Gwiazda.cube</Name>
-      <FullPath>Nasz Bank Gwiazda.cube</FullPath>
+      <Name>UseOfForce.cube</Name>
+      <FullPath>UseOfForce.cube</FullPath>
       <Dependencies>
         <ProjectItem>
-          <Name>Nasz Bank Gwiazda.partitions</Name>
-          <FullPath>Nasz Bank Gwiazda.partitions</FullPath>
+          <Name>UseOfForce.partitions</Name>
+          <FullPath>UseOfForce.partitions</FullPath>
         </ProjectItem>
       </Dependencies>
     </ProjectItem>
   </Cubes>
   <Dimensions>
     <ProjectItem>
-      <Name>Rodzaj Operacji.dim</Name>
-      <FullPath>Rodzaj Operacji.dim</FullPath>
+      <Name>Time.dim</Name>
+      <FullPath>Time.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Rachunek.dim</Name>
-      <FullPath>Rachunek.dim</FullPath>
+      <Name>Outcomes.dim</Name>
+      <FullPath>Outcomes.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Czas.dim</Name>
-      <FullPath>Czas.dim</FullPath>
+      <Name>Type Od Patrol.dim</Name>
+      <FullPath>Type Od Patrol.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Oddzial Banku.dim</Name>
-      <FullPath>Oddzial Banku.dim</FullPath>
+      <Name>Reason For Force.dim</Name>
+      <FullPath>Reason For Force.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Deployed Tactics.dim</Name>
+      <FullPath>Deployed Tactics.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Date.dim</Name>
+      <FullPath>Date.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>CED.dim</Name>
+      <FullPath>CED.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Subject Data.dim</Name>
+      <FullPath>Subject Data.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Location.dim</Name>
+      <FullPath>Location.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Tactics.dim</Name>
+      <FullPath>Tactics.dim</FullPath>
     </ProjectItem>
   </Dimensions>
   <DataSources>
@@ -44,8 +68,8 @@
   </DataSources>
   <DataSourceViews>
     <ProjectItem>
-      <Name>BankGwiazda.dsv</Name>
-      <FullPath>BankGwiazda.dsv</FullPath>
+      <Name>UseOfForce.dsv</Name>
+      <FullPath>UseOfForce.dsv</FullPath>
     </ProjectItem>
   </DataSourceViews>
   <Roles>
@@ -54,6 +78,12 @@
       <FullPath>Role.role</FullPath>
     </ProjectItem>
   </Roles>
+  <Miscellaneous>
+    <ProjectItem>
+      <Name>Pr17149 15525.partitions</Name>
+      <FullPath>Pr17149 15525.partitions</FullPath>
+    </ProjectItem>
+  </Miscellaneous>
   <Configurations>
     <Configuration>
       <Name>Development</Name>
