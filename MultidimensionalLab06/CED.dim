@@ -1,0 +1,345 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="30cbda1e-6749-4124-a3eb-16d58dfa966a" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>CED</ID>
+  <Name>CED</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-3817" scrolltop="-3215" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="12118" y="10716" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01ee0000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="CED" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="4445" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e00005d11000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_CED" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-3817</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-3215</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
+      <Value>
+        <DiagramLayout ZoomPercent="100" ViewPortX="0" ViewPortY="0" xmlns="">
+          <Shapes NodeWidth="166">
+            <Shape Id="Id" Expanded="false">
+              <Attributes>
+                <Attribute Id="Id" />
+                <Attribute Id="CED Aimed" />
+                <Attribute Id="CED Angle Drive Stun" />
+                <Attribute Id="CED Arced" />
+                <Attribute Id="CED Drawn" />
+                <Attribute Id="CED Drive Stun" />
+                <Attribute Id="CED Drive Stun Repeat" />
+              </Attributes>
+              <Position x="20" y="20" />
+            </Shape>
+            <Shape Id="CED Miss Probe" Expanded="false">
+              <Attributes>
+                <Attribute Id="CED Miss Probe" />
+              </Attributes>
+              <Position x="232" y="20" />
+            </Shape>
+            <Shape Id="CED Fired Number" Expanded="false">
+              <Attributes>
+                <Attribute Id="CED Fired Number" />
+              </Attributes>
+              <Position x="232" y="68" />
+            </Shape>
+            <Shape Id="CED Fired" Expanded="false">
+              <Attributes>
+                <Attribute Id="CED Fired" />
+              </Attributes>
+              <Position x="232" y="116" />
+            </Shape>
+          </Shapes>
+        </DiagramLayout>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="b95c2ab8-6a6d-4636-af34-9a5b5f9f1784">
+    <DataSourceViewID>UseOfForce</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="13b51398-d3ab-4a3c-a228-02ef93b0099c">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="c915178c-b3f9-495a-9d7a-fedfaa90808b">
+      <ID>Id</ID>
+      <Name>Id</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b9c6e221-bf97-42f9-b779-0e568cd0bdf2">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="67c8aa22-5b54-4ecd-a22e-96680ba48efc">
+            <TableID>dbo_CED</TableID>
+            <ColumnID>Id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="18a45414-1e5b-4bc9-973f-35164317f12c">
+          <AttributeID>CED Drawn</AttributeID>
+          <Name>CED Drawn</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="9f1f249f-e891-490c-a057-24ee6e0074f0">
+          <AttributeID>CED Aimed</AttributeID>
+          <Name>CED Aimed</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="58a221bb-88d6-441b-bfbe-d6c637b6934a">
+          <AttributeID>CED Arced</AttributeID>
+          <Name>CED Arced</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="cf642596-32ee-46ea-9f6e-5fed0ed29806">
+          <AttributeID>CED Drive Stun</AttributeID>
+          <Name>CED Drive Stun</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="fbb1ed7e-9e20-409b-939c-2db66de4b28f">
+          <AttributeID>CED Drive Stun Repeat</AttributeID>
+          <Name>CED Drive Stun Repeat</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="b4391d84-f43a-43b6-9307-726a6ef77ca8">
+          <AttributeID>CED Angle Drive Stun</AttributeID>
+          <Name>CED Angle Drive Stun</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="3888b8fd-688e-4095-b9a8-8bbf1ed21843">
+          <AttributeID>CED Fired</AttributeID>
+          <Name>CED Fired</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ff12375e-2b15-4c90-885f-7cdb723311ab">
+          <AttributeID>CED Fired Number</AttributeID>
+          <Name>CED Fired Number</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="6b1136ba-b726-4da9-a4c1-16245311cc65">
+          <AttributeID>CED Miss Probe</AttributeID>
+          <Name>CED Miss Probe</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="493319ab-e910-4d03-b8ea-7344f83f4358">
+      <ID>CED Drawn</ID>
+      <Name>CED Drawn</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e46711ed-2dad-42b2-98ef-994a9d35eeb3">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="dd95784b-4394-4b76-ae3c-20fddd28aa2c">
+            <TableID>dbo_CED</TableID>
+            <ColumnID>CED_Drawn</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9ce0fcf3-2f45-45e9-b621-ce8dd6a0a07c">
+      <ID>CED Aimed</ID>
+      <Name>CED Aimed</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="241affac-3bfa-41c0-80d6-6bf9d95e8873">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="05133c75-49e4-45f7-b2b9-1f865ed250f2">
+            <TableID>dbo_CED</TableID>
+            <ColumnID>CED_Aimed</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="37c6c294-9375-45e8-a229-d78cb4253f67">
+      <ID>CED Arced</ID>
+      <Name>CED Arced</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6b4043a9-4d81-44ae-a0f7-ba7cf0d04be6">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a72192b6-a81d-491a-b4a5-06efaca1938d">
+            <TableID>dbo_CED</TableID>
+            <ColumnID>CED_Arced</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5a7df182-50ce-48b3-8a96-a3819103fb2c">
+      <ID>CED Drive Stun</ID>
+      <Name>CED Drive Stun</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7345c89d-6d8b-4c96-9b88-3dd878dac5f3">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="610447bf-3d44-4d1a-bc3a-11576dfbd28f">
+            <TableID>dbo_CED</TableID>
+            <ColumnID>CED_Drive_Stun</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="904dafed-7c03-4050-94a4-4b104ccbdea1">
+      <ID>CED Drive Stun Repeat</ID>
+      <Name>CED Drive Stun Repeat</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="82d699f6-23a6-4777-a944-9748e9fc58df">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="26d4a8bd-b86f-4c63-b689-83748ae7cad2">
+            <TableID>dbo_CED</TableID>
+            <ColumnID>CED_Drive_Stun_Repeat</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="973cb43e-a2a5-4d8d-beb7-38313cdc7639">
+      <ID>CED Angle Drive Stun</ID>
+      <Name>CED Angle Drive Stun</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e2815bda-6e50-4695-8383-77927988f6e9">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4a8d3c65-feff-4365-a136-9fc8f111a765">
+            <TableID>dbo_CED</TableID>
+            <ColumnID>CED_Angle_Drive_Stun</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="73c4feb7-cdec-42c9-9aee-bced55d7e36c">
+      <ID>CED Fired</ID>
+      <Name>CED Fired</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="dc7d6961-522e-4666-8c13-2536772f02e0">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a249bc0a-3565-4a88-9261-81ec52567630">
+            <TableID>dbo_CED</TableID>
+            <ColumnID>CED_Fired</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b8a7a692-35b1-46bd-8fdf-6d0e68016f17">
+      <ID>CED Fired Number</ID>
+      <Name>CED Fired Number</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="051f1c48-cdc1-41d2-9463-2e4556ed68db">
+          <DataType>WChar</DataType>
+          <DataSize>32</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="536e3923-ec92-47dd-83c2-e43f69068460">
+            <TableID>dbo_CED</TableID>
+            <ColumnID>CED_Fired_Number</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d62a1c7d-45b1-4115-8f8c-36ec83d4144f">
+      <ID>CED Miss Probe</ID>
+      <Name>CED Miss Probe</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b7f75f10-d688-45d9-9591-0b05c66c0a7b">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2bf1e46f-dad5-40dc-8741-459032e4dee5">
+            <TableID>dbo_CED</TableID>
+            <ColumnID>CED_Miss_Probe</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="0146143a-e280-43d1-9982-f73ae09481b2">
+      <ID>Hierarchy 1</ID>
+      <Name>CED use</Name>
+      <Levels>
+        <Level dwd:design-time-name="a99160a1-2179-49ac-8b6b-481f241ecaf0">
+          <ID>CED Fired</ID>
+          <Name>CED Fired</Name>
+          <SourceAttributeID>CED Fired</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="44afefbc-5c30-45a0-97a4-b561dba8f1e1">
+          <ID>CED Fired Number</ID>
+          <Name>CED Fired Number</Name>
+          <SourceAttributeID>CED Fired Number</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="5d9a5279-7abe-4098-8057-59ef9646ce35">
+          <ID>CED Miss Probe</ID>
+          <Name>CED Miss Probe</Name>
+          <SourceAttributeID>CED Miss Probe</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

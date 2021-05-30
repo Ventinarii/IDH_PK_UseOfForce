@@ -1,0 +1,546 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="84b5e7d3-ba70-4a6f-b029-05a4d175e1cb" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Reason For Force</ID>
+  <Name>Reason For Force</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-4002" scrolltop="-3215" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="12118" y="11430" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01ee0000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Reason_for_force" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="4075" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000eb0f000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_Reason_for_force" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-4002</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-3215</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
+      <Value>
+        <DiagramLayout ZoomPercent="100" ViewPortX="0" ViewPortY="14" xmlns="">
+          <Shapes NodeWidth="154">
+            <Shape Id="Id" Expanded="false">
+              <Attributes>
+                <Attribute Id="Id" />
+              </Attributes>
+              <Position x="20" y="20" />
+            </Shape>
+            <Shape Id="Other" Expanded="false">
+              <Attributes>
+                <Attribute Id="Other" />
+              </Attributes>
+              <Position x="217" y="20" />
+            </Shape>
+            <Shape Id="Prevent Escape" Expanded="false">
+              <Attributes>
+                <Attribute Id="Prevent Escape" />
+              </Attributes>
+              <Position x="217" y="68" />
+            </Shape>
+            <Shape Id="Prevent Harm" Expanded="false">
+              <Attributes>
+                <Attribute Id="Prevent Harm" />
+              </Attributes>
+              <Position x="217" y="116" />
+            </Shape>
+            <Shape Id="Remove Handcuffs" Expanded="false">
+              <Attributes>
+                <Attribute Id="Remove Handcuffs" />
+              </Attributes>
+              <Position x="217" y="164" />
+            </Shape>
+            <Shape Id="Method Of Entry" Expanded="false">
+              <Attributes>
+                <Attribute Id="Method Of Entry" />
+              </Attributes>
+              <Position x="217" y="212" />
+            </Shape>
+            <Shape Id="Effect Arrest" Expanded="false">
+              <Attributes>
+                <Attribute Id="Effect Arrest" />
+              </Attributes>
+              <Position x="217" y="260" />
+            </Shape>
+            <Shape Id="Effect Serach" Expanded="false">
+              <Attributes>
+                <Attribute Id="Effect Serach" />
+              </Attributes>
+              <Position x="217" y="308" />
+            </Shape>
+            <Shape Id="Secure Evidence" Expanded="false">
+              <Attributes>
+                <Attribute Id="Secure Evidence" />
+              </Attributes>
+              <Position x="217" y="356" />
+            </Shape>
+            <Shape Id="Prevent Offence" Expanded="false">
+              <Attributes>
+                <Attribute Id="Prevent Offence" />
+              </Attributes>
+              <Position x="217" y="404" />
+            </Shape>
+            <Shape Id="Protect Other Officers" Expanded="false">
+              <Attributes>
+                <Attribute Id="Protect Other Officers" />
+              </Attributes>
+              <Position x="217" y="452" />
+            </Shape>
+            <Shape Id="Protect Subject" Expanded="false">
+              <Attributes>
+                <Attribute Id="Protect Subject" />
+              </Attributes>
+              <Position x="217" y="500" />
+            </Shape>
+            <Shape Id="Protect Public" Expanded="false">
+              <Attributes>
+                <Attribute Id="Protect Public" />
+              </Attributes>
+              <Position x="217" y="548" />
+            </Shape>
+            <Shape Id="Protect Self" Expanded="false">
+              <Attributes>
+                <Attribute Id="Protect Self" />
+              </Attributes>
+              <Position x="217" y="596" />
+            </Shape>
+          </Shapes>
+        </DiagramLayout>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="282b53e3-057c-4f07-af04-e3528c0eff4e">
+    <DataSourceViewID>UseOfForce</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="69f34210-aead-43c6-9cab-aab43d1ed1c6">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="3b61ca6f-396c-422e-9439-1b6d256c82ad">
+      <ID>Id</ID>
+      <Name>Id</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="da7617a5-3f6b-4580-b2e3-96463c106ff7">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2c12f586-08df-4c54-9a4d-17d3e92ea2ef">
+            <TableID>dbo_Reason_for_force</TableID>
+            <ColumnID>Id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="12d2f890-c47d-446a-91a4-daa272fab40d">
+          <AttributeID>Protect Self</AttributeID>
+          <Name>Protect Self</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f3578ec1-0a3a-4520-8b3a-f908e331172a">
+          <AttributeID>Protect Public</AttributeID>
+          <Name>Protect Public</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="dd4b6239-5f51-42be-8344-cab117e73580">
+          <AttributeID>Protect Subject</AttributeID>
+          <Name>Protect Subject</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="2902af17-861a-4ccf-971e-e3736128cc22">
+          <AttributeID>Protect Other Officers</AttributeID>
+          <Name>Protect Other Officers</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="1b2be21a-8e6a-4e40-8dfc-86ec0e5535e2">
+          <AttributeID>Prevent Offence</AttributeID>
+          <Name>Prevent Offence</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="b1bb3545-f54d-4136-9934-f563ccad2d87">
+          <AttributeID>Secure Evidence</AttributeID>
+          <Name>Secure Evidence</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="90c81dbd-084b-4035-961f-f75a674c5b40">
+          <AttributeID>Effect Serach</AttributeID>
+          <Name>Effect Serach</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="57dec4db-3c0f-4967-9646-e0b851fdd65b">
+          <AttributeID>Effect Arrest</AttributeID>
+          <Name>Effect Arrest</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="092f8ba7-6796-4ab8-a388-a227f4c91015">
+          <AttributeID>Method Of Entry</AttributeID>
+          <Name>Method Of Entry</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="6a50443f-c74f-4338-a884-2dfe50dedbb1">
+          <AttributeID>Remove Handcuffs</AttributeID>
+          <Name>Remove Handcuffs</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="270dd11c-5b94-46c2-980a-e96097a557fc">
+          <AttributeID>Prevent Harm</AttributeID>
+          <Name>Prevent Harm</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="64144bd3-4945-4b3f-84b1-94ee25bcca97">
+          <AttributeID>Prevent Escape</AttributeID>
+          <Name>Prevent Escape</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="3f703e92-1d26-4ded-95a4-6f3914fd8254">
+          <AttributeID>Other</AttributeID>
+          <Name>Other</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b51e7194-4ca8-4a9a-a72f-e37768f9a2dd">
+      <ID>Protect Self</ID>
+      <Name>Protect Self</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9d284470-b208-438b-af1a-448d133068a7">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f9f72c65-0b79-4d96-a380-c89176f330be">
+            <TableID>dbo_Reason_for_force</TableID>
+            <ColumnID>Protect_self</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1275c890-276e-4e50-b433-66cdbcc2c2e4">
+      <ID>Protect Public</ID>
+      <Name>Protect Public</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f9cb9c0e-52ec-4350-88d6-83d93fd15a4a">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="73681766-c07b-4f51-b7ae-4d9756f51c68">
+            <TableID>dbo_Reason_for_force</TableID>
+            <ColumnID>Protect_Public</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="26b897fa-a93a-4941-86d1-7b776291cceb">
+      <ID>Protect Subject</ID>
+      <Name>Protect Subject</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ed35c13a-58c1-49fc-8d7f-3c4c19a9dd38">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1457d8c3-e439-4f4d-995b-0a4445dcd781">
+            <TableID>dbo_Reason_for_force</TableID>
+            <ColumnID>Protect_Subject</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9cd7b2b6-662d-4f5e-ac1b-0217352905ef">
+      <ID>Protect Other Officers</ID>
+      <Name>Protect Other Officers</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="5bb9b4ab-8a1c-4f0b-968b-63c406db9c93">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6b5767cf-829b-4af8-8fda-9d123618295d">
+            <TableID>dbo_Reason_for_force</TableID>
+            <ColumnID>Protect_Other_Officers</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a784ce6b-ed4b-41da-a96d-25edfcfb55f8">
+      <ID>Prevent Offence</ID>
+      <Name>Prevent Offence</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d11c32e7-9387-4ada-9fda-d6c11cfbe50c">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="02d52a66-0a55-482a-ab77-2ed5e989d63c">
+            <TableID>dbo_Reason_for_force</TableID>
+            <ColumnID>Prevent_Offence</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="0003d12b-f4ef-4377-965d-bf95b017428a">
+      <ID>Secure Evidence</ID>
+      <Name>Secure Evidence</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2fa4ca21-a1f0-47f4-91ce-1f964666114d">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3903a329-aa34-49c4-82eb-be21a1afdf6d">
+            <TableID>dbo_Reason_for_force</TableID>
+            <ColumnID>Secure_Evidence</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="0f0562f0-52c0-454f-a408-b8f591ddc937">
+      <ID>Effect Serach</ID>
+      <Name>Effect Serach</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="78c5b28f-5861-4e49-9b27-a9f66f149a6a">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c04f6111-0c15-4a0c-b658-e51c838e51ad">
+            <TableID>dbo_Reason_for_force</TableID>
+            <ColumnID>Effect_Serach</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d4c2f3ff-566e-48d6-9d7c-adafc2b81715">
+      <ID>Effect Arrest</ID>
+      <Name>Effect Arrest</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="478396ce-2604-4a3c-84b2-d534d0b28aa2">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ab9bbd4c-43eb-40af-8414-973b1b776fb5">
+            <TableID>dbo_Reason_for_force</TableID>
+            <ColumnID>Effect_Arrest</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f16683f1-d5e5-4842-8699-7cbcef2e48f0">
+      <ID>Method Of Entry</ID>
+      <Name>Method Of Entry</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8b0391ad-b539-44a7-abed-53adca346414">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c79511a9-9cd6-4eb4-9e01-1287843bbd74">
+            <TableID>dbo_Reason_for_force</TableID>
+            <ColumnID>Method_of_Entry</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="fe094f4d-89f2-4eca-9b02-69c556334874">
+      <ID>Remove Handcuffs</ID>
+      <Name>Remove Handcuffs</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="48ae5edb-6656-4a12-b296-5b2ce8e528dc">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="59728d7f-c8c8-435b-990c-b034bc96cbdd">
+            <TableID>dbo_Reason_for_force</TableID>
+            <ColumnID>Remove_Handcuffs</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d7126bbe-b5b8-456b-b378-b3373e03e88b">
+      <ID>Prevent Harm</ID>
+      <Name>Prevent Harm</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b8b274a8-7785-41b0-a726-3b0fa8a256d7">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="432c44b1-a1ca-4178-9deb-ea5673b3e47a">
+            <TableID>dbo_Reason_for_force</TableID>
+            <ColumnID>Prevent_Harm</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="8c84b321-3686-42e2-a379-7d25f92c3822">
+      <ID>Prevent Escape</ID>
+      <Name>Prevent Escape</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ff4ed416-523a-436e-8e5e-3fc16ce19fa0">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="91e813e5-e6fd-4dd7-8c2d-9c92581c2739">
+            <TableID>dbo_Reason_for_force</TableID>
+            <ColumnID>Prevent_Escape</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="dc8d0e86-daf5-4be9-8d35-4794803d0436">
+      <ID>Other</ID>
+      <Name>Other</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="27d2332e-90aa-4c85-97dc-47a40be63b00">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="287b638f-8edf-46e8-a023-058c3e10d868">
+            <TableID>dbo_Reason_for_force</TableID>
+            <ColumnID>Other</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="e0f93a5f-4940-40ce-887d-89c2df173eed">
+      <ID>Hierarchy</ID>
+      <Name>Effect</Name>
+      <Levels>
+        <Level dwd:design-time-name="609db65f-7442-4a51-a884-c7ed1915f330">
+          <ID>Effect Arrest</ID>
+          <Name>Effect Arrest</Name>
+          <SourceAttributeID>Effect Arrest</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="277aecc6-1b21-41e1-93f6-9989ed745edd">
+          <ID>Effect Serach</ID>
+          <Name>Effect Serach</Name>
+          <SourceAttributeID>Effect Serach</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+    <Hierarchy dwd:design-time-name="b56755c7-5117-49b2-a219-76868f7310ad">
+      <ID>Hierarchy 1</ID>
+      <Name>Prevent</Name>
+      <Levels>
+        <Level dwd:design-time-name="8a05f940-f52b-45aa-a20d-fb9853cf3dcc">
+          <ID>Prevent Escape</ID>
+          <Name>Prevent Escape</Name>
+          <SourceAttributeID>Prevent Escape</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="2583fa42-bfee-47c9-9beb-902f0d251296">
+          <ID>Prevent Harm</ID>
+          <Name>Prevent Harm</Name>
+          <SourceAttributeID>Prevent Harm</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="61d10f81-a61c-42da-bced-46262b17341f">
+          <ID>Prevent Offence</ID>
+          <Name>Prevent Offence</Name>
+          <SourceAttributeID>Prevent Offence</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+    <Hierarchy dwd:design-time-name="8bd960b2-2802-49a1-9430-8fc72ece9a5a">
+      <ID>Hierarchy 2</ID>
+      <Name>Protect</Name>
+      <Levels>
+        <Level dwd:design-time-name="6dba032c-bb9d-49cb-b567-f41360d86e2a">
+          <ID>Protect Other Officers</ID>
+          <Name>Protect Other Officers</Name>
+          <SourceAttributeID>Protect Other Officers</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="e3a8d789-c75e-4f25-ae2e-822985ad8c0d">
+          <ID>Protect Public</ID>
+          <Name>Protect Public</Name>
+          <SourceAttributeID>Protect Public</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="54d2145d-9d40-47c5-9563-9d991eba3c9a">
+          <ID>Protect Self</ID>
+          <Name>Protect Self</Name>
+          <SourceAttributeID>Protect Self</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="46604333-fce3-4384-8773-1b54d8234d3b">
+          <ID>Protect Subject</ID>
+          <Name>Protect Subject</Name>
+          <SourceAttributeID>Protect Subject</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+    <Hierarchy dwd:design-time-name="95d70857-8381-4de2-bf18-094ab35f4921">
+      <ID>Hierarchy 3</ID>
+      <Name>Other</Name>
+      <Levels>
+        <Level dwd:design-time-name="12935c0d-123a-4743-9f4d-2c73277823f3">
+          <ID>Remove Handcuffs</ID>
+          <Name>Remove Handcuffs</Name>
+          <SourceAttributeID>Remove Handcuffs</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="75800f7c-938a-46e5-9d8d-fd27c220977e">
+          <ID>Secure Evidence</ID>
+          <Name>Secure Evidence</Name>
+          <SourceAttributeID>Secure Evidence</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="931e2c31-2194-402d-b905-ab3ff7904c3a">
+          <ID>Other</ID>
+          <Name>Other</Name>
+          <SourceAttributeID>Other</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="3384a8d7-e742-4a80-931e-968abca45e59">
+          <ID>Method Of Entry</ID>
+          <Name>Method Of Entry</Name>
+          <SourceAttributeID>Method Of Entry</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

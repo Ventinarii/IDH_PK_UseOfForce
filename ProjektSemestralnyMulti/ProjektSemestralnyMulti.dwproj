@@ -18,6 +18,12 @@
       <FullPath>UseOfForce.dsv</FullPath>
     </ProjectItem>
   </DataSourceViews>
+  <Roles>
+    <ProjectItem>
+      <Name>Role.role</Name>
+      <FullPath>Role.role</FullPath>
+    </ProjectItem>
+  </Roles>
   <Configurations>
     <Configuration>
       <Name>Development</Name>
