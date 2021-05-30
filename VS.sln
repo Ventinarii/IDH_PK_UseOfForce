@@ -19,6 +19,8 @@ Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "ProjektSemestralnyMulti", "
 EndProject
 Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Report ProjectLab08", "Report ProjectLab08\Report ProjectLab08.rptproj", "{2075EA9C-7656-4AC0-B55F-FE5ABBA92CA9}"
 EndProject
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "PK USE OF FORCE RAPORT", "PK USE OF FORCE RAPORT\PK USE OF FORCE RAPORT.rptproj", "{8CEC27BD-3E4C-461F-A6ED-4B6647731101}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,6 +74,17 @@ Global
 		{2075EA9C-7656-4AC0-B55F-FE5ABBA92CA9}.Release|Any CPU.ActiveCfg = Release
 		{2075EA9C-7656-4AC0-B55F-FE5ABBA92CA9}.Release|Any CPU.Build.0 = Release
 		{2075EA9C-7656-4AC0-B55F-FE5ABBA92CA9}.Release|Any CPU.Deploy.0 = Release
+		{8CEC27BD-3E4C-461F-A6ED-4B6647731101}.Debug|Any CPU.ActiveCfg = Debug
+		{8CEC27BD-3E4C-461F-A6ED-4B6647731101}.Debug|Any CPU.Build.0 = Debug
+		{8CEC27BD-3E4C-461F-A6ED-4B6647731101}.Debug|Any CPU.Deploy.0 = Debug
+		{8CEC27BD-3E4C-461F-A6ED-4B6647731101}.DebugLocal|Any CPU.ActiveCfg = DebugLocal
+		{8CEC27BD-3E4C-461F-A6ED-4B6647731101}.DebugLocal|Any CPU.Build.0 = DebugLocal
+		{8CEC27BD-3E4C-461F-A6ED-4B6647731101}.Development|Any CPU.ActiveCfg = Debug
+		{8CEC27BD-3E4C-461F-A6ED-4B6647731101}.Development|Any CPU.Build.0 = Debug
+		{8CEC27BD-3E4C-461F-A6ED-4B6647731101}.Development|Any CPU.Deploy.0 = Debug
+		{8CEC27BD-3E4C-461F-A6ED-4B6647731101}.Release|Any CPU.ActiveCfg = Release
+		{8CEC27BD-3E4C-461F-A6ED-4B6647731101}.Release|Any CPU.Build.0 = Release
+		{8CEC27BD-3E4C-461F-A6ED-4B6647731101}.Release|Any CPU.Deploy.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
