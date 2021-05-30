@@ -49,9 +49,6 @@
     <Reports>@(Report)</Reports>
   </PropertyGroup>
   <ItemGroup>
-    <DataSet Include="DataSet1.rsd" />
-  </ItemGroup>
-  <ItemGroup>
     <DataSource Include="CubeDataSource.rds" />
     <DataSource Include="DataSource1.rds" />
   </ItemGroup>

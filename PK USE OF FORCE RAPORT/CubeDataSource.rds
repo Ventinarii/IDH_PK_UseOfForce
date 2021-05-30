@@ -3,6 +3,7 @@
   <ConnectionProperties>
     <Extension>OLEDB-MD</Extension>
     <ConnectString>Data Source=db-mssql;Initial Catalog=s17149</ConnectString>
+    <IntegratedSecurity>true</IntegratedSecurity>
   </ConnectionProperties>
   <DataSourceID>454e9830-1f83-4496-b0ba-d21f90031b67</DataSourceID>
 </RptDataSource>
