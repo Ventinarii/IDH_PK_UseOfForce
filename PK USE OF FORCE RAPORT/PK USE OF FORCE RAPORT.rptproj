@@ -50,10 +50,11 @@
   </PropertyGroup>
   <ItemGroup>
     <DataSource Include="CubeDataSource.rds" />
-    <DataSource Include="DataSource1.rds" />
+    <DataSource Include="SQLDataSource.rds" />
   </ItemGroup>
   <ItemGroup>
-    <Report Include="TesetRep.rdl" />
+    <Report Include="Patrol.rdl" />
+    <Report Include="ResonForForce.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>

@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report MustUnderstand="df" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:df="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition/defaultfontfamily">
+  <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="Cube">
+      <DataSourceReference>CubeDataSource</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>05a5183e-0ec6-410b-b4ce-5fe077004bdd</rd:DataSourceID>
+    </DataSource>
+    <DataSource Name="SQL">
+      <DataSourceReference>SQLDataSource</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>faadb67d-ca73-48f5-bd90-2ba6e05f8746</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>Cube</DataSourceName>
+        <CommandText> SELECT NON EMPTY { [Measures].[Action Count] } ON COLUMNS, NON EMPTY { ([Reason For Force].[Effect].[Effect Serach].ALLMEMBERS * [Reason For Force].[Hierarchy].[Method Of Entry].ALLMEMBERS * [Reason For Force].[Prevent].[Prevent Offence].ALLMEMBERS * [Reason For Force].[Protect].[Protect Subject].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM [UseOfForce] CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
+        <rd:DesignerState>
+          <QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <QuerySpecification xsi:type="MDXQuerySpecification">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Reason For Force</DimensionName>
+                      <HierarchyName>Effect</HierarchyName>
+                      <HierarchyUniqueName>[Reason For Force].[Effect]</HierarchyUniqueName>
+                      <LevelName>Effect Arrest</LevelName>
+                      <UniqueName>[Reason For Force].[Effect].[Effect Arrest]</UniqueName>
+                    </ID>
+                    <ItemCaption>Effect Arrest</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Reason For Force</DimensionName>
+                      <HierarchyName>Effect</HierarchyName>
+                      <HierarchyUniqueName>[Reason For Force].[Effect]</HierarchyUniqueName>
+                      <LevelName>Effect Serach</LevelName>
+                      <UniqueName>[Reason For Force].[Effect].[Effect Serach]</UniqueName>
+                    </ID>
+                    <ItemCaption>Effect Serach</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Reason For Force</DimensionName>
+                      <HierarchyName>Hierarchy</HierarchyName>
+                      <HierarchyUniqueName>[Reason For Force].[Hierarchy]</HierarchyUniqueName>
+                      <LevelName>Remove Handcuffs</LevelName>
+                      <UniqueName>[Reason For Force].[Hierarchy].[Remove Handcuffs]</UniqueName>
+                    </ID>
+                    <ItemCaption>Remove Handcuffs</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Reason For Force</DimensionName>
+                      <HierarchyName>Hierarchy</HierarchyName>
+                      <HierarchyUniqueName>[Reason For Force].[Hierarchy]</HierarchyUniqueName>
+                      <LevelName>Secure Evidence</LevelName>
+                      <UniqueName>[Reason For Force].[Hierarchy].[Secure Evidence]</UniqueName>
+                    </ID>
+                    <ItemCaption>Secure Evidence</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Reason For Force</DimensionName>
+                      <HierarchyName>Hierarchy</HierarchyName>
+                      <HierarchyUniqueName>[Reason For Force].[Hierarchy]</HierarchyUniqueName>
+                      <LevelName>Other</LevelName>
+                      <UniqueName>[Reason For Force].[Hierarchy].[Other]</UniqueName>
+                    </ID>
+                    <ItemCaption>Other</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Reason For Force</DimensionName>
+                      <HierarchyName>Hierarchy</HierarchyName>
+                      <HierarchyUniqueName>[Reason For Force].[Hierarchy]</HierarchyUniqueName>
+                      <LevelName>Method Of Entry</LevelName>
+                      <UniqueName>[Reason For Force].[Hierarchy].[Method Of Entry]</UniqueName>
+                    </ID>
+                    <ItemCaption>Method Of Entry</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Reason For Force</DimensionName>
+                      <HierarchyName>Prevent</HierarchyName>
+                      <HierarchyUniqueName>[Reason For Force].[Prevent]</HierarchyUniqueName>
+                      <LevelName>Prevent Escape</LevelName>
+                      <UniqueName>[Reason For Force].[Prevent].[Prevent Escape]</UniqueName>
+                    </ID>
+                    <ItemCaption>Prevent Escape</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Reason For Force</DimensionName>
+                      <HierarchyName>Prevent</HierarchyName>
+                      <HierarchyUniqueName>[Reason For Force].[Prevent]</HierarchyUniqueName>
+                      <LevelName>Prevent Harm</LevelName>
+                      <UniqueName>[Reason For Force].[Prevent].[Prevent Harm]</UniqueName>
+                    </ID>
+                    <ItemCaption>Prevent Harm</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Reason For Force</DimensionName>
+                      <HierarchyName>Prevent</HierarchyName>
+                      <HierarchyUniqueName>[Reason For Force].[Prevent]</HierarchyUniqueName>
+                      <LevelName>Prevent Offence</LevelName>
+                      <UniqueName>[Reason For Force].[Prevent].[Prevent Offence]</UniqueName>
+                    </ID>
+                    <ItemCaption>Prevent Offence</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Reason For Force</DimensionName>
+                      <HierarchyName>Protect</HierarchyName>
+                      <HierarchyUniqueName>[Reason For Force].[Protect]</HierarchyUniqueName>
+                      <LevelName>Protect Other Officers</LevelName>
+                      <UniqueName>[Reason For Force].[Protect].[Protect Other Officers]</UniqueName>
+                    </ID>
+                    <ItemCaption>Protect Other Officers</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Reason For Force</DimensionName>
+                      <HierarchyName>Protect</HierarchyName>
+                      <HierarchyUniqueName>[Reason For Force].[Protect]</HierarchyUniqueName>
+                      <LevelName>Protect Public</LevelName>
+                      <UniqueName>[Reason For Force].[Protect].[Protect Public]</UniqueName>
+                    </ID>
+                    <ItemCaption>Protect Public</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Reason For Force</DimensionName>
+                      <HierarchyName>Protect</HierarchyName>
+                      <HierarchyUniqueName>[Reason For Force].[Protect]</HierarchyUniqueName>
+                      <LevelName>Protect Self</LevelName>
+                      <UniqueName>[Reason For Force].[Protect].[Protect Self]</UniqueName>
+                    </ID>
+                    <ItemCaption>Protect Self</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Reason For Force</DimensionName>
+                      <HierarchyName>Protect</HierarchyName>
+                      <HierarchyUniqueName>[Reason For Force].[Protect]</HierarchyUniqueName>
+                      <LevelName>Protect Subject</LevelName>
+                      <UniqueName>[Reason For Force].[Protect].[Protect Subject]</UniqueName>
+                    </ID>
+                    <ItemCaption>Protect Subject</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>Action Count</MeasureName>
+                      <UniqueName>[Measures].[Action Count]</UniqueName>
+                    </ID>
+                    <ItemCaption>Action Count</ItemCaption>
+                    <BackColor>true</BackColor>
+                    <ForeColor>true</ForeColor>
+                    <FontFamily>true</FontFamily>
+                    <FontSize>true</FontSize>
+                    <FontWeight>true</FontWeight>
+                    <FontStyle>true</FontStyle>
+                    <FontDecoration>true</FontDecoration>
+                    <FormattedValue>true</FormattedValue>
+                    <FormatString>true</FormatString>
+                  </Item>
+                </Items>
+              </Select>
+              <AutoExecute>false</AutoExecute>
+              <From>UseOfForce</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties>
+                <IncludeMemberValue>true</IncludeMemberValue>
+              </QueryProperties>
+            </QuerySpecification>
+            <Query>
+              <Statement> SELECT NON EMPTY { [Measures].[Action Count] } ON COLUMNS, NON EMPTY { ([Reason For Force].[Effect].[Effect Serach].ALLMEMBERS * [Reason For Force].[Hierarchy].[Method Of Entry].ALLMEMBERS * [Reason For Force].[Prevent].[Prevent Offence].ALLMEMBERS * [Reason For Force].[Protect].[Protect Subject].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM [UseOfForce] CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
+              <ParameterDefinitions />
+            </Query>
+          </QueryDefinition>
+        </rd:DesignerState>
+      </Query>
+      <Fields>
+        <Field Name="Effect_Arrest">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Reason For Force].[Effect].[Effect Arrest]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Effect_Serach">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Reason For Force].[Effect].[Effect Serach]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Remove_Handcuffs">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Reason For Force].[Hierarchy].[Remove Handcuffs]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Secure_Evidence">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Reason For Force].[Hierarchy].[Secure Evidence]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Other">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Reason For Force].[Hierarchy].[Other]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Method_Of_Entry">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Reason For Force].[Hierarchy].[Method Of Entry]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Prevent_Escape">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Reason For Force].[Prevent].[Prevent Escape]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Prevent_Harm">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Reason For Force].[Prevent].[Prevent Harm]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Prevent_Offence">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Reason For Force].[Prevent].[Prevent Offence]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Protect_Other_Officers">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Reason For Force].[Protect].[Protect Other Officers]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Protect_Public">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Reason For Force].[Protect].[Protect Public]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Protect_Self">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Reason For Force].[Protect].[Protect Self]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Protect_Subject">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Reason For Force].[Protect].[Protect Subject]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Action_Count">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Action Count]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>8.125in</Height>
+        <Style />
+      </Body>
+      <Width>14.19792in</Width>
+      <Page>
+        <PageHeight>29.7cm</PageHeight>
+        <PageWidth>21cm</PageWidth>
+        <LeftMargin>2cm</LeftMargin>
+        <RightMargin>2cm</RightMargin>
+        <TopMargin>2cm</TopMargin>
+        <BottomMargin>2cm</BottomMargin>
+        <ColumnSpacing>0.13cm</ColumnSpacing>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>59a1420a-c0c1-40cd-a073-96f07352f3af</rd:ReportID>
+</Report>
