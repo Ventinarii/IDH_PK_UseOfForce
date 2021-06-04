@@ -21,6 +21,8 @@ Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Report ProjectLab08", "Repo
 EndProject
 Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "PK USE OF FORCE RAPORT", "PK USE OF FORCE RAPORT\PK USE OF FORCE RAPORT.rptproj", "{8CEC27BD-3E4C-461F-A6ED-4B6647731101}"
 EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Transfer", "Transfer\Transfer.dtproj", "{897AD3B1-7F22-4828-AAC9-10713097B64B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,6 +87,14 @@ Global
 		{8CEC27BD-3E4C-461F-A6ED-4B6647731101}.Release|Any CPU.ActiveCfg = Release
 		{8CEC27BD-3E4C-461F-A6ED-4B6647731101}.Release|Any CPU.Build.0 = Release
 		{8CEC27BD-3E4C-461F-A6ED-4B6647731101}.Release|Any CPU.Deploy.0 = Release
+		{897AD3B1-7F22-4828-AAC9-10713097B64B}.Debug|Any CPU.ActiveCfg = Development
+		{897AD3B1-7F22-4828-AAC9-10713097B64B}.Debug|Any CPU.Build.0 = Development
+		{897AD3B1-7F22-4828-AAC9-10713097B64B}.DebugLocal|Any CPU.ActiveCfg = Development
+		{897AD3B1-7F22-4828-AAC9-10713097B64B}.DebugLocal|Any CPU.Build.0 = Development
+		{897AD3B1-7F22-4828-AAC9-10713097B64B}.Development|Any CPU.ActiveCfg = Development
+		{897AD3B1-7F22-4828-AAC9-10713097B64B}.Development|Any CPU.Build.0 = Development
+		{897AD3B1-7F22-4828-AAC9-10713097B64B}.Release|Any CPU.ActiveCfg = Development
+		{897AD3B1-7F22-4828-AAC9-10713097B64B}.Release|Any CPU.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

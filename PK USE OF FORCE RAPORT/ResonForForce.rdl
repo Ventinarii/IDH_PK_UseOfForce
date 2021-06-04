@@ -15,10 +15,10 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="Cube">
       <Query>
         <DataSourceName>Cube</DataSourceName>
-        <CommandText> SELECT NON EMPTY { [Measures].[Action Count] } ON COLUMNS, NON EMPTY { ([Reason For Force].[Effect].[Effect Serach].ALLMEMBERS * [Reason For Force].[Hierarchy].[Method Of Entry].ALLMEMBERS * [Reason For Force].[Prevent].[Prevent Offence].ALLMEMBERS * [Reason For Force].[Protect].[Protect Subject].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM [UseOfForce] CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
+        <CommandText> SELECT NON EMPTY { [Measures].[Action Count] } ON COLUMNS, NON EMPTY { ([Reason For Force].[Effect].[Effect Serach].ALLMEMBERS * [Reason For Force].[Other Reason].[Method Of Entry].ALLMEMBERS * [Reason For Force].[Prevent].[Prevent Offence].ALLMEMBERS * [Reason For Force].[Protect].[Protect Subject].ALLMEMBERS * [Deployed Tactics].[Tactic use and Effective 1].[Effective 1].ALLMEMBERS * [Deployed Tactics].[Tactic use and Effective 2].[Effective 2].ALLMEMBERS * [Deployed Tactics].[Tactic use and Effective 3].[Effective 3].ALLMEMBERS * [Deployed Tactics].[Tactic use and Effective 4].[Effective 4].ALLMEMBERS * [Deployed Tactics].[Tactic use and Effective 5].[Effective 5].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM [UseOfForce] CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
         <rd:DesignerState>
           <QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
             <CommandType>MDX</CommandType>
@@ -50,10 +50,10 @@
                   <Item>
                     <ID xsi:type="Level">
                       <DimensionName>Reason For Force</DimensionName>
-                      <HierarchyName>Hierarchy</HierarchyName>
-                      <HierarchyUniqueName>[Reason For Force].[Hierarchy]</HierarchyUniqueName>
+                      <HierarchyName>Other Reason</HierarchyName>
+                      <HierarchyUniqueName>[Reason For Force].[Other Reason]</HierarchyUniqueName>
                       <LevelName>Remove Handcuffs</LevelName>
-                      <UniqueName>[Reason For Force].[Hierarchy].[Remove Handcuffs]</UniqueName>
+                      <UniqueName>[Reason For Force].[Other Reason].[Remove Handcuffs]</UniqueName>
                     </ID>
                     <ItemCaption>Remove Handcuffs</ItemCaption>
                     <UniqueName>true</UniqueName>
@@ -61,10 +61,10 @@
                   <Item>
                     <ID xsi:type="Level">
                       <DimensionName>Reason For Force</DimensionName>
-                      <HierarchyName>Hierarchy</HierarchyName>
-                      <HierarchyUniqueName>[Reason For Force].[Hierarchy]</HierarchyUniqueName>
+                      <HierarchyName>Other Reason</HierarchyName>
+                      <HierarchyUniqueName>[Reason For Force].[Other Reason]</HierarchyUniqueName>
                       <LevelName>Secure Evidence</LevelName>
-                      <UniqueName>[Reason For Force].[Hierarchy].[Secure Evidence]</UniqueName>
+                      <UniqueName>[Reason For Force].[Other Reason].[Secure Evidence]</UniqueName>
                     </ID>
                     <ItemCaption>Secure Evidence</ItemCaption>
                     <UniqueName>true</UniqueName>
@@ -72,10 +72,10 @@
                   <Item>
                     <ID xsi:type="Level">
                       <DimensionName>Reason For Force</DimensionName>
-                      <HierarchyName>Hierarchy</HierarchyName>
-                      <HierarchyUniqueName>[Reason For Force].[Hierarchy]</HierarchyUniqueName>
+                      <HierarchyName>Other Reason</HierarchyName>
+                      <HierarchyUniqueName>[Reason For Force].[Other Reason]</HierarchyUniqueName>
                       <LevelName>Other</LevelName>
-                      <UniqueName>[Reason For Force].[Hierarchy].[Other]</UniqueName>
+                      <UniqueName>[Reason For Force].[Other Reason].[Other]</UniqueName>
                     </ID>
                     <ItemCaption>Other</ItemCaption>
                     <UniqueName>true</UniqueName>
@@ -83,10 +83,10 @@
                   <Item>
                     <ID xsi:type="Level">
                       <DimensionName>Reason For Force</DimensionName>
-                      <HierarchyName>Hierarchy</HierarchyName>
-                      <HierarchyUniqueName>[Reason For Force].[Hierarchy]</HierarchyUniqueName>
+                      <HierarchyName>Other Reason</HierarchyName>
+                      <HierarchyUniqueName>[Reason For Force].[Other Reason]</HierarchyUniqueName>
                       <LevelName>Method Of Entry</LevelName>
-                      <UniqueName>[Reason For Force].[Hierarchy].[Method Of Entry]</UniqueName>
+                      <UniqueName>[Reason For Force].[Other Reason].[Method Of Entry]</UniqueName>
                     </ID>
                     <ItemCaption>Method Of Entry</ItemCaption>
                     <UniqueName>true</UniqueName>
@@ -169,6 +169,116 @@
                     <UniqueName>true</UniqueName>
                   </Item>
                   <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Deployed Tactics</DimensionName>
+                      <HierarchyName>Tactic use and Effective 1</HierarchyName>
+                      <HierarchyUniqueName>[Deployed Tactics].[Tactic use and Effective 1]</HierarchyUniqueName>
+                      <LevelName>Tactic</LevelName>
+                      <UniqueName>[Deployed Tactics].[Tactic use and Effective 1].[Tactic]</UniqueName>
+                    </ID>
+                    <ItemCaption>Tactic</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Deployed Tactics</DimensionName>
+                      <HierarchyName>Tactic use and Effective 1</HierarchyName>
+                      <HierarchyUniqueName>[Deployed Tactics].[Tactic use and Effective 1]</HierarchyUniqueName>
+                      <LevelName>Effective 1</LevelName>
+                      <UniqueName>[Deployed Tactics].[Tactic use and Effective 1].[Effective 1]</UniqueName>
+                    </ID>
+                    <ItemCaption>Effective 1</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Deployed Tactics</DimensionName>
+                      <HierarchyName>Tactic use and Effective 2</HierarchyName>
+                      <HierarchyUniqueName>[Deployed Tactics].[Tactic use and Effective 2]</HierarchyUniqueName>
+                      <LevelName>Tactic</LevelName>
+                      <UniqueName>[Deployed Tactics].[Tactic use and Effective 2].[Tactic]</UniqueName>
+                    </ID>
+                    <ItemCaption>Tactic</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Deployed Tactics</DimensionName>
+                      <HierarchyName>Tactic use and Effective 2</HierarchyName>
+                      <HierarchyUniqueName>[Deployed Tactics].[Tactic use and Effective 2]</HierarchyUniqueName>
+                      <LevelName>Effective 2</LevelName>
+                      <UniqueName>[Deployed Tactics].[Tactic use and Effective 2].[Effective 2]</UniqueName>
+                    </ID>
+                    <ItemCaption>Effective 2</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Deployed Tactics</DimensionName>
+                      <HierarchyName>Tactic use and Effective 3</HierarchyName>
+                      <HierarchyUniqueName>[Deployed Tactics].[Tactic use and Effective 3]</HierarchyUniqueName>
+                      <LevelName>Tactic</LevelName>
+                      <UniqueName>[Deployed Tactics].[Tactic use and Effective 3].[Tactic]</UniqueName>
+                    </ID>
+                    <ItemCaption>Tactic</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Deployed Tactics</DimensionName>
+                      <HierarchyName>Tactic use and Effective 3</HierarchyName>
+                      <HierarchyUniqueName>[Deployed Tactics].[Tactic use and Effective 3]</HierarchyUniqueName>
+                      <LevelName>Effective 3</LevelName>
+                      <UniqueName>[Deployed Tactics].[Tactic use and Effective 3].[Effective 3]</UniqueName>
+                    </ID>
+                    <ItemCaption>Effective 3</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Deployed Tactics</DimensionName>
+                      <HierarchyName>Tactic use and Effective 4</HierarchyName>
+                      <HierarchyUniqueName>[Deployed Tactics].[Tactic use and Effective 4]</HierarchyUniqueName>
+                      <LevelName>Tactic</LevelName>
+                      <UniqueName>[Deployed Tactics].[Tactic use and Effective 4].[Tactic]</UniqueName>
+                    </ID>
+                    <ItemCaption>Tactic</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Deployed Tactics</DimensionName>
+                      <HierarchyName>Tactic use and Effective 4</HierarchyName>
+                      <HierarchyUniqueName>[Deployed Tactics].[Tactic use and Effective 4]</HierarchyUniqueName>
+                      <LevelName>Effective 4</LevelName>
+                      <UniqueName>[Deployed Tactics].[Tactic use and Effective 4].[Effective 4]</UniqueName>
+                    </ID>
+                    <ItemCaption>Effective 4</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Deployed Tactics</DimensionName>
+                      <HierarchyName>Tactic use and Effective 5</HierarchyName>
+                      <HierarchyUniqueName>[Deployed Tactics].[Tactic use and Effective 5]</HierarchyUniqueName>
+                      <LevelName>Tactic</LevelName>
+                      <UniqueName>[Deployed Tactics].[Tactic use and Effective 5].[Tactic]</UniqueName>
+                    </ID>
+                    <ItemCaption>Tactic</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Deployed Tactics</DimensionName>
+                      <HierarchyName>Tactic use and Effective 5</HierarchyName>
+                      <HierarchyUniqueName>[Deployed Tactics].[Tactic use and Effective 5]</HierarchyUniqueName>
+                      <LevelName>Effective 5</LevelName>
+                      <UniqueName>[Deployed Tactics].[Tactic use and Effective 5].[Effective 5]</UniqueName>
+                    </ID>
+                    <ItemCaption>Effective 5</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
                     <ID xsi:type="Measure">
                       <MeasureName>Action Count</MeasureName>
                       <UniqueName>[Measures].[Action Count]</UniqueName>
@@ -198,7 +308,7 @@
               </QueryProperties>
             </QuerySpecification>
             <Query>
-              <Statement> SELECT NON EMPTY { [Measures].[Action Count] } ON COLUMNS, NON EMPTY { ([Reason For Force].[Effect].[Effect Serach].ALLMEMBERS * [Reason For Force].[Hierarchy].[Method Of Entry].ALLMEMBERS * [Reason For Force].[Prevent].[Prevent Offence].ALLMEMBERS * [Reason For Force].[Protect].[Protect Subject].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM [UseOfForce] CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
+              <Statement> SELECT NON EMPTY { [Measures].[Action Count] } ON COLUMNS, NON EMPTY { ([Reason For Force].[Effect].[Effect Serach].ALLMEMBERS * [Reason For Force].[Other Reason].[Method Of Entry].ALLMEMBERS * [Reason For Force].[Prevent].[Prevent Offence].ALLMEMBERS * [Reason For Force].[Protect].[Protect Subject].ALLMEMBERS * [Deployed Tactics].[Tactic use and Effective 1].[Effective 1].ALLMEMBERS * [Deployed Tactics].[Tactic use and Effective 2].[Effective 2].ALLMEMBERS * [Deployed Tactics].[Tactic use and Effective 3].[Effective 3].ALLMEMBERS * [Deployed Tactics].[Tactic use and Effective 4].[Effective 4].ALLMEMBERS * [Deployed Tactics].[Tactic use and Effective 5].[Effective 5].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM [UseOfForce] CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
               <ParameterDefinitions />
             </Query>
           </QueryDefinition>
@@ -209,40 +319,20 @@
           <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Reason For Force].[Effect].[Effect Arrest]" /&gt;</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Effect_Serach">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Reason For Force].[Effect].[Effect Serach]" /&gt;</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Remove_Handcuffs">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Reason For Force].[Hierarchy].[Remove Handcuffs]" /&gt;</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Secure_Evidence">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Reason For Force].[Hierarchy].[Secure Evidence]" /&gt;</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Other">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Reason For Force].[Hierarchy].[Other]" /&gt;</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Method_Of_Entry">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Reason For Force].[Hierarchy].[Method Of Entry]" /&gt;</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Prevent_Escape">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Reason For Force].[Prevent].[Prevent Escape]" /&gt;</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="Prevent_Harm">
           <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Reason For Force].[Prevent].[Prevent Harm]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Effect_Serach">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Reason For Force].[Effect].[Effect Serach]" /&gt;</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Prevent_Offence">
           <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Reason For Force].[Prevent].[Prevent Offence]" /&gt;</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Protect_Other_Officers">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Reason For Force].[Protect].[Protect Other Officers]" /&gt;</DataField>
+        <Field Name="Remove_Handcuffs">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Reason For Force].[Other Reason].[Remove Handcuffs]" /&gt;</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Protect_Public">
@@ -253,13 +343,73 @@
           <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Reason For Force].[Protect].[Protect Self]" /&gt;</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="Secure_Evidence">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Reason For Force].[Other Reason].[Secure Evidence]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Other">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Reason For Force].[Other Reason].[Other]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="Protect_Subject">
           <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Reason For Force].[Protect].[Protect Subject]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Method_Of_Entry">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Reason For Force].[Other Reason].[Method Of Entry]" /&gt;</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Action_Count">
           <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Action Count]" /&gt;</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Prevent_Escape">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Reason For Force].[Prevent].[Prevent Escape]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Protect_Other_Officers">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Reason For Force].[Protect].[Protect Other Officers]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Tactic">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Deployed Tactics].[Tactic use and Effective 1].[Tactic]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Effective_1">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Deployed Tactics].[Tactic use and Effective 1].[Effective 1]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Tactic2">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Deployed Tactics].[Tactic use and Effective 2].[Tactic]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Effective_2">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Deployed Tactics].[Tactic use and Effective 2].[Effective 2]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Tactic3">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Deployed Tactics].[Tactic use and Effective 3].[Tactic]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Effective_3">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Deployed Tactics].[Tactic use and Effective 3].[Effective 3]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Tactic4">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Deployed Tactics].[Tactic use and Effective 4].[Tactic]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Effective_4">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Deployed Tactics].[Tactic use and Effective 4].[Effective 4]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Tactic5">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Deployed Tactics].[Tactic use and Effective 5].[Tactic]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Effective_5">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Deployed Tactics].[Tactic use and Effective 5].[Effective 5]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -267,6 +417,959 @@
   <ReportSections>
     <ReportSection>
       <Body>
+        <ReportItems>
+          <Tablix Name="Tablix12">
+            <TablixCorner>
+              <TablixCornerRows>
+                <TablixCornerRow>
+                  <TablixCornerCell>
+                    <CellContents>
+                      <Textbox Name="Textbox196">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Selected Reason</Value>
+                                <Style />
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox196</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixCornerCell>
+                </TablixCornerRow>
+              </TablixCornerRows>
+            </TablixCorner>
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>2.5cm</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Action_Count">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Action_Count.Value)</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Action_Count</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Tactic">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Tactic.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Tactic.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>0.6cm</Size>
+                    <CellContents>
+                      <Textbox Name="Tactic">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=Fields!Tactic.Value</Value>
+                                <Style />
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Tactic</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Effect_Arrest">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Effect_Arrest.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Effect_Arrest.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>3.21438cm</Size>
+                    <CellContents>
+                      <Textbox Name="Effect_Arrest">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=SWITCH(
+        Parameters!ReasonForForce.Value = "Ef_Ar", Fields!Effect_Arrest.Value,
+		Parameters!ReasonForForce.Value = "Pr_Ha", Fields!Prevent_Harm.Value,
+		Parameters!ReasonForForce.Value = "Ef_Se", Fields!Effect_Serach.Value,
+		Parameters!ReasonForForce.Value = "Pr_Of", Fields!Prevent_Offence.Value,
+
+		Parameters!ReasonForForce.Value = "Re_Ha", Fields!Remove_Handcuffs.Value,
+		Parameters!ReasonForForce.Value = "Pr_Pu", Fields!Protect_Public.Value,
+		Parameters!ReasonForForce.Value = "Pr_Se", Fields!Protect_Self.Value,
+		Parameters!ReasonForForce.Value = "Se_Ev", Fields!Secure_Evidence.Value,
+
+		Parameters!ReasonForForce.Value = "Ot_", Fields!Other.Value,
+		Parameters!ReasonForForce.Value = "Pr_Su", Fields!Protect_Subject.Value,
+		Parameters!ReasonForForce.Value = "Me_En", Fields!Method_Of_Entry.Value,
+		Parameters!ReasonForForce.Value = "Pr_Es", Fields!Prevent_Escape.Value,
+
+		Parameters!ReasonForForce.Value = "Pr_Ot", Fields!Protect_Other_Officers.Value
+        )</Value>
+                                <Style />
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Effect_Arrest</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>Cube</DataSetName>
+            <Top>1.53141cm</Top>
+            <Left>2.82787cm</Left>
+            <Height>1.2cm</Height>
+            <Width>5.71438cm</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Tablix Name="Tablix13">
+            <TablixCorner>
+              <TablixCornerRows>
+                <TablixCornerRow>
+                  <TablixCornerCell>
+                    <CellContents>
+                      <Textbox Name="Textbox197">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Selected Reason</Value>
+                                <Style />
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox196</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixCornerCell>
+                </TablixCornerRow>
+              </TablixCornerRows>
+            </TablixCorner>
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>2.5cm</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Action_Count2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Action_Count.Value)</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Action_Count</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Tactic2">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Tactic.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Tactic.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>0.6cm</Size>
+                    <CellContents>
+                      <Textbox Name="Tactic2">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=Fields!Tactic2.Value</Value>
+                                <Style />
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Tactic</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Effect_Arrest2">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Effect_Arrest.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Effect_Arrest.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>3.21438cm</Size>
+                    <CellContents>
+                      <Textbox Name="Effect_Arrest2">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=SWITCH(Parameters!ReasonForForce.Value = "Ef_Ar", Fields!Effect_Arrest.Value, Parameters!ReasonForForce.Value = "Pr_Ha", Fields!Prevent_Harm.Value, Parameters!ReasonForForce.Value = "Ef_Se", Fields!Effect_Serach.Value, Parameters!ReasonForForce.Value = "Pr_Of", Fields!Prevent_Offence.Value, Parameters!ReasonForForce.Value = "Re_Ha", Fields!Remove_Handcuffs.Value, Parameters!ReasonForForce.Value = "Pr_Pu", Fields!Protect_Public.Value, Parameters!ReasonForForce.Value = "Pr_Se", Fields!Protect_Self.Value, Parameters!ReasonForForce.Value = "Se_Ev", Fields!Secure_Evidence.Value, Parameters!ReasonForForce.Value = "Ot_", Fields!Other.Value, Parameters!ReasonForForce.Value = "Pr_Su", Fields!Protect_Subject.Value, Parameters!ReasonForForce.Value = "Me_En", Fields!Method_Of_Entry.Value, Parameters!ReasonForForce.Value = "Pr_Es", Fields!Prevent_Escape.Value, Parameters!ReasonForForce.Value = "Pr_Ot", Fields!Protect_Other_Officers.Value)</Value>
+                                <Style />
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Effect_Arrest</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>Cube</DataSetName>
+            <Top>2.9078cm</Top>
+            <Left>2.82786cm</Left>
+            <Height>1.2cm</Height>
+            <Width>5.71438cm</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Tablix Name="Tablix14">
+            <TablixCorner>
+              <TablixCornerRows>
+                <TablixCornerRow>
+                  <TablixCornerCell>
+                    <CellContents>
+                      <Textbox Name="Textbox198">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Selected Reason</Value>
+                                <Style />
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox196</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixCornerCell>
+                </TablixCornerRow>
+              </TablixCornerRows>
+            </TablixCorner>
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>2.5cm</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Action_Count3">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Action_Count.Value)</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Action_Count</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Tactic3">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Tactic.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Tactic.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>0.6cm</Size>
+                    <CellContents>
+                      <Textbox Name="Tactic3">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=Fields!Tactic3.Value</Value>
+                                <Style />
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Tactic</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Effect_Arrest3">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Effect_Arrest.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Effect_Arrest.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>3.21438cm</Size>
+                    <CellContents>
+                      <Textbox Name="Effect_Arrest3">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=SWITCH(Parameters!ReasonForForce.Value = "Ef_Ar", Fields!Effect_Arrest.Value, Parameters!ReasonForForce.Value = "Pr_Ha", Fields!Prevent_Harm.Value, Parameters!ReasonForForce.Value = "Ef_Se", Fields!Effect_Serach.Value, Parameters!ReasonForForce.Value = "Pr_Of", Fields!Prevent_Offence.Value, Parameters!ReasonForForce.Value = "Re_Ha", Fields!Remove_Handcuffs.Value, Parameters!ReasonForForce.Value = "Pr_Pu", Fields!Protect_Public.Value, Parameters!ReasonForForce.Value = "Pr_Se", Fields!Protect_Self.Value, Parameters!ReasonForForce.Value = "Se_Ev", Fields!Secure_Evidence.Value, Parameters!ReasonForForce.Value = "Ot_", Fields!Other.Value, Parameters!ReasonForForce.Value = "Pr_Su", Fields!Protect_Subject.Value, Parameters!ReasonForForce.Value = "Me_En", Fields!Method_Of_Entry.Value, Parameters!ReasonForForce.Value = "Pr_Es", Fields!Prevent_Escape.Value, Parameters!ReasonForForce.Value = "Pr_Ot", Fields!Protect_Other_Officers.Value)</Value>
+                                <Style />
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Effect_Arrest</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>Cube</DataSetName>
+            <Top>4.28419cm</Top>
+            <Left>2.82787cm</Left>
+            <Height>1.2cm</Height>
+            <Width>5.71438cm</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Tablix Name="Tablix15">
+            <TablixCorner>
+              <TablixCornerRows>
+                <TablixCornerRow>
+                  <TablixCornerCell>
+                    <CellContents>
+                      <Textbox Name="Textbox199">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Selected Reason</Value>
+                                <Style />
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox196</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixCornerCell>
+                </TablixCornerRow>
+              </TablixCornerRows>
+            </TablixCorner>
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>2.5cm</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Action_Count4">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Action_Count.Value)</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Action_Count</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Tactic4">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Tactic.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Tactic.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>0.6cm</Size>
+                    <CellContents>
+                      <Textbox Name="Tactic4">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=Fields!Tactic4.Value</Value>
+                                <Style />
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Tactic</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Effect_Arrest4">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Effect_Arrest.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Effect_Arrest.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>3.21438cm</Size>
+                    <CellContents>
+                      <Textbox Name="Effect_Arrest4">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=SWITCH(Parameters!ReasonForForce.Value = "Ef_Ar", Fields!Effect_Arrest.Value, Parameters!ReasonForForce.Value = "Pr_Ha", Fields!Prevent_Harm.Value, Parameters!ReasonForForce.Value = "Ef_Se", Fields!Effect_Serach.Value, Parameters!ReasonForForce.Value = "Pr_Of", Fields!Prevent_Offence.Value, Parameters!ReasonForForce.Value = "Re_Ha", Fields!Remove_Handcuffs.Value, Parameters!ReasonForForce.Value = "Pr_Pu", Fields!Protect_Public.Value, Parameters!ReasonForForce.Value = "Pr_Se", Fields!Protect_Self.Value, Parameters!ReasonForForce.Value = "Se_Ev", Fields!Secure_Evidence.Value, Parameters!ReasonForForce.Value = "Ot_", Fields!Other.Value, Parameters!ReasonForForce.Value = "Pr_Su", Fields!Protect_Subject.Value, Parameters!ReasonForForce.Value = "Me_En", Fields!Method_Of_Entry.Value, Parameters!ReasonForForce.Value = "Pr_Es", Fields!Prevent_Escape.Value, Parameters!ReasonForForce.Value = "Pr_Ot", Fields!Protect_Other_Officers.Value)</Value>
+                                <Style />
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Effect_Arrest</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>Cube</DataSetName>
+            <Top>5.66057cm</Top>
+            <Left>2.82786cm</Left>
+            <Height>1.2cm</Height>
+            <Width>5.71438cm</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Tablix Name="Tablix16">
+            <TablixCorner>
+              <TablixCornerRows>
+                <TablixCornerRow>
+                  <TablixCornerCell>
+                    <CellContents>
+                      <Textbox Name="Textbox200">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Selected Reason</Value>
+                                <Style />
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox196</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixCornerCell>
+                </TablixCornerRow>
+              </TablixCornerRows>
+            </TablixCorner>
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>2.5cm</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Action_Count5">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Action_Count.Value)</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Action_Count</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Tactic5">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Tactic.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Tactic.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>0.6cm</Size>
+                    <CellContents>
+                      <Textbox Name="Tactic5">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=Fields!Tactic5.Value</Value>
+                                <Style />
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Tactic</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Effect_Arrest5">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Effect_Arrest.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Effect_Arrest.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>3.21438cm</Size>
+                    <CellContents>
+                      <Textbox Name="Effect_Arrest5">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=SWITCH(Parameters!ReasonForForce.Value = "Ef_Ar", Fields!Effect_Arrest.Value, Parameters!ReasonForForce.Value = "Pr_Ha", Fields!Prevent_Harm.Value, Parameters!ReasonForForce.Value = "Ef_Se", Fields!Effect_Serach.Value, Parameters!ReasonForForce.Value = "Pr_Of", Fields!Prevent_Offence.Value, Parameters!ReasonForForce.Value = "Re_Ha", Fields!Remove_Handcuffs.Value, Parameters!ReasonForForce.Value = "Pr_Pu", Fields!Protect_Public.Value, Parameters!ReasonForForce.Value = "Pr_Se", Fields!Protect_Self.Value, Parameters!ReasonForForce.Value = "Se_Ev", Fields!Secure_Evidence.Value, Parameters!ReasonForForce.Value = "Ot_", Fields!Other.Value, Parameters!ReasonForForce.Value = "Pr_Su", Fields!Protect_Subject.Value, Parameters!ReasonForForce.Value = "Me_En", Fields!Method_Of_Entry.Value, Parameters!ReasonForForce.Value = "Pr_Es", Fields!Prevent_Escape.Value, Parameters!ReasonForForce.Value = "Pr_Ot", Fields!Protect_Other_Officers.Value)</Value>
+                                <Style />
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Effect_Arrest</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>Cube</DataSetName>
+            <Top>7.03696cm</Top>
+            <Left>2.82786cm</Left>
+            <Height>1.2cm</Height>
+            <Width>5.71438cm</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+        </ReportItems>
         <Height>8.125in</Height>
         <Style />
       </Body>
@@ -283,10 +1386,85 @@
       </Page>
     </ReportSection>
   </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="ReasonForForce">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Ef_Ar</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Reason for force</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>Ef_Ar</Value>
+            <Label>Effect Arrest</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Pr_Ha</Value>
+            <Label>Prevent Harm</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Ef_Se</Value>
+            <Label>Effec Serach</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Pr_Of</Value>
+            <Label>Prevent Offence</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Re_Ha</Value>
+            <Label>Remove Handcuffs</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Pr_Pu</Value>
+            <Label>Protect Public</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Pr_Se</Value>
+            <Label>Protect Self</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Se_Ev</Value>
+            <Label>Secure Evidence</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Ot_</Value>
+            <Label>Other</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Pr_Su</Value>
+            <Label>Protect Subject</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Me_En</Value>
+            <Label>Method Of Entry</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Pr_Es</Value>
+            <Label>Prevent Escape</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Pr_Ot</Value>
+            <Label>Protect Other Officers</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+      <UsedInQuery>True</UsedInQuery>
+    </ReportParameter>
+  </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>4</NumberOfColumns>
       <NumberOfRows>2</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>ReasonForForce</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
